@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/web_cmc.css" type="text/css" />
+<link rel="stylesheet" href="/css/web_defaultprint.css" type="text/css" media="print" />
+<title>Job View</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript" />
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding --&gt;
+</script>
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding --&gt;
+</script>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onmouseover="window.status='Go to Main Content'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to Main Content'; return true" onblur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>Steinbright Career Development Center Services</h1></div><div class="headerlinksdiv">
+<span class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onmouseover="window.status='Skip Module Navigation Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip Module Navigation Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip Module Navigation Links</a>
+</p><table class="plaintable" summary="This is main table for displaying Tab Items." width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="pldefault">
+<table class="plaintable" summary="This table displays Tab Items." cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onmouseover="window.status='New Personal Information'; return true" onmouseout="window.status=''; return true" onfocus="window.status='New Personal Information'; return true" onblur="window.status=''; return true">Personal Information</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/bwszkfrag.P_DisplayFinResponsibility" onmouseover="window.status='Student Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Student Services'; return true" onblur="window.status=''; return true">Student Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_FinAidMainMnu" onmouseover="window.status='Financial Aid Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Financial Aid Services'; return true" onblur="window.status=''; return true">Financial Aid Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="tabon" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=amenu.P_CMCMnu" onmouseover="window.status='Career Management Center Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Career Management Center Services'; return true" onblur="window.status=''; return true">SCDC Services</a>
+</td>
+<td class="bgtabon" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+</map>
+</span>
+<a name="skip_Module_Navigation_Links_H"></a>
+</div>
+<table class="plaintable" summary="This table displays Menu Items and Banner Search textbox." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<div class="headerlinksdiv2">
+<form action="/pls/duprod/twbksrch.P_ShowResults" method="post">
+Search
+<span class="fieldlabeltextinvisible"><label for="keyword_in_id"><span class="fieldlabeltext">Search</span></label></span>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" id="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<span class="pageheaderlinks">
+<a href="/wtlhelp/twbhhelp.htm" accesskey="H" onclick="popup = window.open('/wtlhelp/twbhhelp.htm', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onmouseover="window.status='';  return true" onmouseout="window.status=''; return true" onfocus="window.status='';  return true" onblur="window.status=''; return true" class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="pagetitlediv">
+<table class="plaintable" summary="This table displays title and static header displays." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<h2>Job View</h2>
+</td>
+<td class="pldefault">
+ 
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<div class="staticheaders">
+</div>
+</div></td>
+</tr>
+<tr>
+<td class="bg3" width="100%" colspan="3"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td>
+</tr>
+</tbody></table>
+<a name="main_content"></a>
+</div>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+
+<table class="SSDtableS" summary="This table shows the student's coordinator and their contact info.">
+<tbody><tr>
+<td></td><td class="SSDrightcell"><div class="SSDrightcellDiv"><div style="text-align: left">
+<span class="smallernowraptext">Co-op Advisor: Ms Kelsie J LeVan</span>
+<br />
+<span class="smallernowraptext">215-571-4209</span>
+<br />
+<a href="mailto:kelsie.j.levan@drexel.edu" onmouseover="window.status='Send email to  at kelsie.j.levan@drexel.edu';  return true" onmouseout="window.status=''; return true"><span class="smallernowraptext">kelsie.j.levan@drexel.edu</span></a>
+<br />
+<br />
+<span class="smallernowraptext">Your coop term(s) by academic year are:</span>
+<span class="smallernowraptext"><br />Fall Quarter 18-19, Winter Quarter 18-19</span>
+<span class="smallernowraptext"><br />Fall Quarter 19-20, Winter Quarter 19-20</span>
+<span class="smallernowraptext"><br />Fall Quarter 20-21, Winter Quarter 20-21 </span>
+</div></div></td>
+</tr>
+</tbody></table>
+
+<br />
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=8&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+<br />
+<p>
+<span class="strongtext">Employer: </span>
+PricewaterhouseCoopers LLP (4086)
+<br />
+<span class="strongtext">Hiring Office Location: </span>
+Philadelphia PA (1)
+</p>
+<span class="strongtext">Job's Type: </span>
+<span class="smallertext">Co-op Experience</span>
+<br />
+<span class="strongtext">Job's Duration: </span>
+<span class="smallertext">Fall/Winter (September 2018 - March 2019</span>
+<br />
+<span class="strongtext">Job's Length: </span>
+<span class="smallertext">2 terms</span>
+<br />
+<span class="strongtext">Job's Status: </span>
+<span class="smallertext">Active</span>
+<br />
+<br />
+<br />
+<table class="borderland" summary="This table holds the basic job description information." cellspacing="0">
+<tbody><tr>
+<td class="default"><div class="centeraligntext"><span class="largertext">PwC Risk Assurance - IAS/PA Co-Op Fall 2019 - NEW YORK CITY</span><br /><span class="smallertext">(357288)</span></div></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Division/Location/Company Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">Risk Assurance - Thriving on change
+
+Today's business environment is different. More complex.
+More connected. 
+Companies face new and unknown risks, but also new and untapped 
+opportunities. Risk Assurance is at the forefront of this
+change, ready to 
+transform how you perceive - and capitalize on - risk.</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Non-Profit Co.: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Job Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">To be eligible for this position you must also apply to: 
+http://pwc.cm/tp/rj6_kU93e_J-K
+
+
+Line of Service:   Assurance
+Job Type:   Full Time
+Travel Requirements:   0-20%
+Office Locations:   New York
+Job ID:   106989BR
+Level:   Intern CS
+Co-Op will occur approx August 2019 - December 2019.
+
+PwC/LOS Overview
+PwC is a network of firms committed to delivering quality in
+assurance, 
+tax and advisory services.
+
+We help resolve complex issues for our clients and identify 
+opportunities. Learn more about us at www.pwc.com/us.
+
+At PwC, we develop leaders at all levels. The distinctive
+leadership 
+framework we call the PwC Professional
+(http://pwc.to/pwcpro) provides 
+our people with a road map to grow their skills and build
+their careers. 
+Our approach to ongoing development shapes employees into
+leaders, 
+no matter the role or job title.
+
+Are you ready to build a career in a rapidly changing world?
+Developing 
+as a PwC Professional means that you will be ready
+- to create and capture opportunities to advance your career
+and fulfill 
+your potential. To learn more, visit us at www.pwc.com/careers.
+
+What will you do if you work in Assurance at PwC?
+You'll ask questions and test assumptions. You'll help
+determine if 
+companies are reporting information that investors and
+others can rely 
+on. You'll help businesses solve complex issues faced by
+management 
+and boards. You'll serve the public interest and the capital
+markets by 
+conducting quality audits. Visit http://pwc.to/pwcassurance
+for more 
+information on PwC's Assurance practice.
+
+The world is quickly changing, that's why PwC is quickly
+adapting. We're 
+capitalizing on trends that will impact corporate reporting.
+
+Our focus is on globalization, technology, sustainability and 
+environmental reporting, population shifts and regulation.
+We combine 
+skills and experience to help our clients address their
+challenges.
+
+Under the Assurance umbrella, the Risk Assurance practice 
+encompasses solutions that are driven by dynamic global
+markets which 
+require companies to take actions to successfully address
+business risks 
+and 
+opportunities. Our professionals work across sectors and
+develop deep 
+competencies which allow them to advise both audit and
+non-audit 
+clients. Practitioners are thought leaders in developing
+innovative 
+responses to a changing risk environment, in areas such as
+Compliance, 
+Reporting, Internal Audit, and Data Analytics. 
+
+Risk Assurance has 3700+ professionals in the US who deliver
+quality 
+audits and advise companies about how to solve complex
+problems and 
+take advantage of new business opportunities. Risk Assurance 
+solutions are aligned around the following risk management and 
+mitigation areas:
+- Design and operating effectiveness of internal control
+framework 
+- Internal Audit program Effectiveness 
+- Governance, Risk and Compliance Program Effectiveness
+- Strategic Data and Technology Initiatives 
+
+Professionals serve both public and private companies across
+13 key 
+industries. We help companies achieve the confidence needed
+for strong 
+three lines of defense on risk by: 
+- Building and fortifying internal and IT risk controls
+- Developing and strengthening risk and compliance programs
+- Improving the capabilities of Internal Audit function 
+
+We draw proudly on our auditing heritage as well as our
+commercial  
+experience to rigorously evaluate and implement a companyâ€™s 
+governance procedures, processes, information, and controls. We 
+provide 
+broad support across a business to elevate trust and
+transparency, 
+protect the business and give all parties assurance that
+risks are fully 
+anticipated, understood, and managed strategically.</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Unpaid Position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Job Location: </span><span class="smallertext">Multiple Locations</span><br />          </td>
+
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Car required to get to work: </span><span class="smallertext">Yes</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Number of Openings: </span><span class="smallertext">1</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Exposure to hazardous and/or biohazardous materials: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Travel required for position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Anticipated travel information: </span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Qualifications:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Recommended Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">Minimum Academic Requirements: Pursuing a Bachelor's degree in 
+Accounting, Finance/Economics, Management Information Systems, 
+Computer Science, Business Administration, Statistics
+Mathematics, 
+Regulatory Compliance, Science, Technology, Engineering and 
+Mathematics and/or other business field of study.
+Preferred cumulative GPA: 3.3 Preferred Major GPA: 3.3 Eligible 
+students should be in the 3rd year of a 4 yr degree program
+or in the 
+4th year of a 5yr program. 
+Client service interns typically join us during the
+winter/spring or 
+summer prior to their intended graduation year.
+
+Job Duties: 
+Play a role as an intern in PwC's Risk Assurance practice
+assisting with 
+the development of risk assessments and audit plans;
+assisting in the 
+execution of internal controls, internal and external audit
+support 
+fieldwork or Sarbanes-Oxley. Participate in select portions
+of internal 
+controls and/or internal/external audits. Participate in
+projects, 
+demonstrating creative thinking and individual initiative.
+Cultivate 
+teamwork 
+dynamics through working as a team member: understanding
+personal 
+and team roles; contributing to a positive working
+environment by 
+building solid relationships with team members; and
+proactively seeking 
+guidance, clarification and feedback. Demonstrate
+flexibility in 
+prioritizing and completing tasks; and communicating
+potential conflicts 
+to a supervisor. Exercise professional skepticism in
+gathering, reviewing, 
+and analyzing client information.
+
+
+Job Requirements: 
+Demonstrates some knowledge of, and/or proven record of success 
+through experience or coursework in, the broad range of
+risks affecting 
+companies and management decision making, complex IT
+environments 
+and/or all aspects of auditing, including in the following
+areas:
+- Desire to pursue a career in Public Accounting;
+- Basic understanding of one or more of the following:
+application 
+controls, IT general controls, financial reporting concepts
+and the 
+internal and/or external audit process;
+- Experience demonstrating strong problem solving skills and
+the ability 
+to prioritize and handle multiple tasks;
+- Ability to interact with various levels of client and firm
+management in 
+both written and verbal form; and,
+- Flexibility and desire to travel, as client assignments
+require.
+
+Wonder what its really like to be an intern in risk
+assurance? Hear from 
+PwC people doing it right now! https://youtu.be/CMLWBreZshY</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Additional Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum GPA: </span><span class="smallertext">- None -</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum Work Authorization level required: </span><span class="smallertext">No Restriction</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Level(s) of Experience Sought: </span><span class="smallertext"><br />          Beginner - Limited or no previous work experience/first Co-op or <br />          Intermediate - Some related work or volunteer experience/second Co-op</span></td>
+</tr>
+<tr>
+<td class="default">
+<span class="bluesmallertext">      Majors Sought: </span>
+<span class="smallertext">Bus. - Accounting, </span>
+<span class="smallertext">Bus. - Business Analytics, </span>
+<span class="smallertext">Bus. - Management Information Systems, </span>
+<span class="smallertext">Comp. - Computer Science, </span>
+<span class="smallertext">Comp. - Data Science, </span>
+<span class="smallertext">Comp. - Information Technology</span>
+</td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Additional Application Instructions</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">To be eligible for this position you must also apply to: http://pwc.cm/tp/rj6_kU93e_J-K</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Pre-Employment Screening Requirements : </span><span class="smallertext">None</span></td>
+</tr>
+</tbody></table>
+<table class="datadisplaytable" summary="This table shows some information about the current student with respect to this job in the 'Request Interview' phase." cellspacing="0">
+<tbody><tr>
+<td colspan="3" class="ddlabel">
+<span class="strongtext">Last day interviews may be requested: </span>
+<span class="redtext">May 16th, 2018</span>
+</td>
+</tr>
+<tr>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobRequest?i_user_type=S&amp;i_job_num=357288&amp;i_begin_term=201815&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D8%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Request an interview for PwC Risk Assurance - IAS/PA Co-Op Fall 2019 - NEW YORK CITY Job';  return true" onmouseout="window.status=''; return true">Request an Interview</a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357288&amp;i_begin_term=201815&amp;i_action=A&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D8%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Place PwC Risk Assurance - IAS/PA Co-Op Fall 2019 - NEW YORK CITY in Job Shopping Cart';  return true" onmouseout="window.status=''; return true">Save for later <img src="/cmcgifs/cart.gif" class="headerImg" title="" name="Shopping Cart" hspace="0" vspace="0" border="0" /></a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=8&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+</td>
+</tr>
+</tbody></table>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table class="plaintable" summary="This is table displays line separator at end of the page." width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+<a href="#top" onmouseover="window.status='Skip to top of page'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip to top of page'; return true" onblur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</div>
+<div class="footerbeforediv">
+
+</div>
+<div class="footerlinksdiv">
+<span class="pagefooterlinks">
+<map name="SCDC_Services_Main_Menu_Links_F" title="SCDC Services Main Menu Links">
+<p>
+<a href="#skip_SCDC_Services_Main_Menu_Links_F" onmouseover="window.status='Skip SCDC Services Main Menu Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip SCDC Services Main Menu Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip SCDC Services Main Menu Links</a>
+</p><p>[ <a href="/pls/duprod/hwczkresm.P_ResumeSelectStud" onmouseover="window.status='Resume Development'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Resume Development'; return true" onblur="window.status=''; return true">Resume Development for Co-op</a>
+ | <a href="/pls/duprod/hwczksjsc.P_StudentJobSearchStud" onmouseover="window.status='Search for Co-op Jobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search for Co-op Jobs'; return true" onblur="window.status=''; return true">Search for Co-op Jobs</a>
+ | <a href="http://drexelscdc-csm.symplicity.com/" onmouseover="window.status='Go to DragonJobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to DragonJobs'; return true" onblur="window.status=''; return true">DragonJobs</a>
+ | <a href="/pls/duprod/hwczksrmp.P_StudentRequestMaintStud" onmouseover="window.status='Maintain your Interview Requests'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Maintain your Interview Requests'; return true" onblur="window.status=''; return true">Maintain your Co-Op Interview Requests</a>
+ | <a href="/pls/duprod/hwczkfsep.P_StudentESaPSelectStud" onmouseover="window.status='ES&amp;P Form Selection'; return true" onmouseout="window.status=''; return true" onfocus="window.status='ES&amp;P Form Selection'; return true" onblur="window.status=''; return true">ES&amp;P Form Completion</a>
+ | <a href="/pls/duprod/hwczkfsea.P_StudentESaPArchiveStud" onmouseover="window.status='Search the ES&amp;P Archives'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search the ES&amp;P Archives'; return true" onblur="window.status=''; return true">Search the ES&amp;P Archives</a>
+ | <a href="/pls/duprod/hwczkmsph.P_PlacementHistoryDisp" onmouseover="window.status='Your Co-op Employment Records'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Your Co-op Employment Records'; return true" onblur="window.status=''; return true">Your Co-op Employment Records</a>
+ ]
+
+
+<a name="skip_SCDC_Services_Main_Menu_Links_F"></a>
+</p></map></span></div>
+<div class="footerafterdiv">
+
+</div>
+<div class="globalafterdiv">
+
+</div>
+<div class="globalfooterdiv">
+
+</div>
+<div class="pagefooterdiv">
+<span class="releasetext">Release: 018</span>
+</div>
+<div class="poweredbydiv">
+</div>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="banner_copyright"> <br /><h5>© 2018 Ellucian Company L.P. and its affiliates.<br /></h5></div>
+
+
+</body></html>

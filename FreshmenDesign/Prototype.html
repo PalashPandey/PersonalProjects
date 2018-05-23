@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css">
+
+    <!--visjs-->
+	<script type="text/javascript" src="http://visjs.org/dist/vis.js"></script>
+	<link href="http://visjs.org/dist/vis-network.min.css" rel="stylesheet" type="text/css">
+	
+	<title>Abstract Algebra</title>
+	<style>
+	body{
+		background-color: rgb(240,240,240);
+		
+	}
+	.navbar-default{
+		background-color: rgb(0,0,0);
+		position: fixed;
+		width: 100%;
+	}
+	.nav.navbar-nav.mr-auto li a{
+		color: white;
+	}
+	
+    #mynetwork {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  
+	#wrapper{
+		width:100%;
+
+	}
+	.input-xs {
+		height: 22px;
+		padding: 2px 5px;
+		font-size: 12px;
+		line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+		border-radius: 3px;
+	}
+	.generatingElements input{
+		float:left;
+	}
+	.equationDivClass h5{
+		float:left;
+	}
+	.equationDivClass input{
+		width: 14px;
+		float: left;
+	}
+	span{
+		vertical-align: super;
+		font-size: 50%;
+	}
+	.introjs-overlay { opacity: .1 !important; }
+	.introjs-helperLayer { opacity: .1 !important;}
+	</style>
+	<script>
+		var equationParts = [];
+		
+		function copy(set, addSet){
+			for(var element of set){
+				addSet.add(element);
+			}
+		return addSet;
+		}
+		
+		function dictCopy(dict, dictReturn){
+			for(key in dict){
+				dictReturn[key] = dict[key];
+				}
+			return dictReturn;
+		}
+		
+		function convertExponentMult(exponentiated){ //for taking in user input
+			var terms = exponentiated.split('*');
+			var multExpr = '';
+			for(var i = 0; i < terms.length; i++){
+				if(terms[i].match('^') != null){
+					var baseExponent = terms[i].split('^');
+					multExpr += baseExponent[0].repeat(parseInt(baseExponent[1]));
+				}else{
+					multExpr += terms[i];
+				}
+			}
+			console.log(multExpr);
+			return multExpr;
+		}
+		
+		function convertMultExponent(mult){ //for display purposes
+			var connectedElements = mult.match(/(.)\1*/g); //repeated elements are placed in array
+			var exponentExpr = '';
+			for(var i = 0; i < connectedElements.length; i++){
+				if (i < connectedElements.length - 1){
+					if (connectedElements.length > 1){
+						exponentExpr += connectedElements[i].charAt(0) + '^' + connectedElements[i].length + '*';
+					}else{	
+						exponentExpr += connectedElements[i].charAt(0) + '*';
+					}
+				}else{
+					if(connectedElements.length > 1){
+						exponentExpr += connectedElements[i].charAt(0) + '^' + connectedElements[i].length;
+					}else{
+						exponentExpr += connecctedElements[i].charAt(0);
+					}
+				}
+			}
+			console.log(exponentExpr);
+			return exponentExpr;
+		}
+			
+		var elements = []
+		var elemPairs = []
+		var indexCounter = 0;
+		function writeGeneratingEquations(){
+			elements = [];
+			elemPairs = []
+			console.log(elemNumbers);
+			document.getElementById('definingEquations').innerHTML = '';
+			for(var i of elemNumbers){
+				var ident = 'base' + i;
+				var elem = document.getElementById(ident).value;
+				elem = elem.replace(/\s+/g,'');
+				console.log(elem);
+				elements.push(elem);
+			}
+			
+			console.log(elements);
+			indexCounter = 0;
+			for(var i = 0; i < elements.length; i++){
+				for(var j = i + 1; j < elements.length; j++){
+					var equationDiv = document.createElement('div');
+					elemPairs.push([elements[i],elements[j]])
+					equationDiv.id = 'equation' + indexCounter;
+					equationDiv.className = 'equationDivClass';
+					var lineOne = "<h5>" + elements[i] + "</h5><span><input type = 'text' id = 'exp1-" + indexCounter.toString() + "'></span>";
+					var lineTwo =  "<h5>" + elements[j] + "</h5><span><input type = 'text' id = 'exp2-" + indexCounter + "'></span>";
+					var lineThree = "<h5> = " + elements[j] + "</h5><span><input type = 'text' id = 'exp3-" + indexCounter + "'></span>";
+					var lineFour =  "<h5>" + elements[i] + "</h5><span><input type = 'text' id = 'exp4-" + indexCounter + "'></span>";
+					var lineBreak = "<br>";
+					var htmlString = lineOne + lineTwo + lineThree + lineFour + lineBreak;
+					equationDiv.innerHTML = htmlString;
+					document.getElementById("definingEquations").append(equationDiv);
+					indexCounter++;
+				}
+			}	
+		}
+		
+		var identity = new Set();
+		var equivalenceClasses = {};
+		function parseEquations(){ // Writes identity equivalence class
+			equivalenceClasses = {};
+			identity = new Set();
+			for(gen of elements){
+				console.log(gen, "generator added to EquivalenceClasses");
+				var ord = ordDict[gen];
+				equivalenceClasses[ord] = '1';
+				equivalenceClasses[gen] = gen;
+			}
+			for(var equat = 0; equat < indexCounter; equat++){
+					var unsimplifiedsList = new Set();
+					var a = elemPairs[equat][0];
+					var b = elemPairs[equat][1];
+					var bInverse = inverseDict[b];
+					var aInverse = inverseDict[a];
+					var n = parseInt(document.getElementById('exp1-' + equat).value);
+					var m = parseInt(document.getElementById('exp2-' + equat).value);
+					var r = parseInt(document.getElementById('exp3-' + equat).value);
+					var s = parseInt(document.getElementById('exp4-' + equat).value);
+					var aNbM = a.repeat(n) + b.repeat(m);
+					var bRaS = b.repeat(r) + a.repeat(s);
+					unsimplifiedsList.add(bInverse.repeat(r) + aNbM + aInverse.repeat(s)); //Equation solved for 1 in each possible way
+					unsimplifiedsList.add(aInverse.repeat(s) + bInverse.repeat(r) + aNbM);
+					unsimplifiedsList.add(aNbM + aInverse.repeat(s) + bInverse.repeat(r));
+					unsimplifiedsList.add(aInverse.repeat(n) + bRaS + bInverse.repeat(m));
+					unsimplifiedsList.add(bInverse.repeat(m) + aInverse.repeat(n) + bRaS);
+					unsimplifiedsList.add(bRaS + bInverse.repeat(m) + aInverse.repeat(n));
+					console.log(unsimplifiedsList);
+					for(var equivElem of unsimplifiedsList){
+						console.log(equivElem);
+						var changing = true;
+						while(changing){
+							var equivTemp = equivElem.replace(ordDict[a],''); //Reduces equation using ord(a) and ord(b)
+							var equivTemp = equivElem.replace(ordDict[b],'');
+							if(equivTemp == equivElem){
+								changing = false;
+							}else{
+								equivElem = equivTemp;
+							}
+						}
+						console.log(equivElem, 'Reduced Element');
+						equivalenceClasses[equivElem] = '1';
+						console.log(equivalenceClasses);
+						identity.add(equivElem);
+						console.log(identity);
+					}
+				}
+
+			for(var generator of elements){
+				for(var ident of identity){
+					rightMult = ident + generator;
+					leftMult = generator + ident;
+
+					equivalenceClasses[leftMult] = generator;
+					equivalenceClasses[rightMult] = generator;
+				}
+			}
+			console.log(equivalenceClasses);
+			constructTable();
+		}
+		
+		var elemNumber = 0;
+		var elemNumbers = new Set([0]);
+		function addGenerator(){
+			elemNumber++;
+			elemNumbers.add(elemNumber)
+			var div = document.createElement('div'); 
+			div.className = "generatingElements";
+			div.style = "color: white; margin-left:40px; float:left;";
+			div.id = 'generator' + elemNumber.toString();
+			div.innerHTML = '<input type = "text" size = "1" id = "base'+elemNumber+'">\
+					<h5 style = "float: left">^</h5>\
+					<input type = "text" size = "1" id = "exp'+elemNumber+'">\
+					<h5 style = "float: left">= 1&nbsp;&nbsp;</h5>\
+					<button style = "background-color: red; color: white; float:left; border: none; font-size:10px; margin-top: 5px;" onclick = "removeGenerator('+elemNumber+')">&#10006;</button>';
+			document.getElementById("generatingElems").append(div);
+		}
+		
+		
+		function removeGenerator(i){
+			document.getElementById('generator' + i.toString()).remove();
+			elemNumbers.delete(i);
+		}
+
+		function writeEdgeChecks(elementDict, generators){
+			generators = new Set(generators);
+			console.log(generators);
+			document.getElementById('edgeChecks').innerHTML = '';
+			var container = document.createElement('div');
+			for(var element in elementDict){
+				var elementCheckLabel = document.createElement('label');
+				var elementCheck = document.createElement('input');
+				elementCheck.type = 'checkbox';
+				elementCheckLabel.className = 'checkbox-inline';
+				elementCheckLabel.innerHTML += element;
+				elementCheck.id = 'edge-' + elementDict[element];
+				if(generators.has(element)){
+					console.log(element, 'is a generator');
+					elementCheck.checked = true;
+				}
+				elementCheckLabel.appendChild(elementCheck);
+				container.appendChild(elementCheckLabel);
+			}
+			document.getElementById('edgeChecks').appendChild(container);
+		}
+		
+		var inverseDict = {};
+		var ordDict = {};
+		function writeInverseDict(){
+			inverseDict = {};
+			ordDict = {};
+			console.log(elemNumbers);
+			
+			for(var i of elemNumbers){
+				var base = document.getElementById("base" + i).value;
+				var exp = document.getElementById("exp" + i).value;
+				inverseDict[base] = base.repeat(parseInt(exp) - 1);
+				ordDict[base] = base.repeat(parseInt(exp));
+			}
+			console.log(inverseDict);
+			writeGeneratingEquations();
+		}
+		function constructTable(){
+			var indexElementDict = {0:'1'};
+			var elementIndexDict = {'1' : 0};
+			var currIndexValue = 1;
+			for(var elem of elements){
+				indexElementDict[currIndexValue] = elem;
+				elementIndexDict[elem] = currIndexValue;
+				currIndexValue++;
+			}
+			console.log('constructTable() called');
+			var maxSize = parseInt(document.getElementById("tableSize").value);
+			var seen = new Set(elements);
+			console.log(seen)
+			console.log(equivalenceClasses);
+			var seenTemp = new Set()
+			seenTemp = copy(seen, seenTemp);
+			console.log(seen.size);
+			var reachedMaxSize = false;
+			var newElems = true;
+			var cayleyTableDict = {};
+			while(seen.size < maxSize && newElems){
+				newElems = false;
+				var equivalenceClassesTemp = dictCopy(equivalenceClasses,{});
+				for(var leftElem of seen){
+					for(var rightElem of seen){
+						var nextElem = leftElem + rightElem;
+						var nextElemEquivalence = {};
+						nextElemEquivalence[nextElem] = nextElem;
+						oldElem = false;
+						var tablePosition = elementIndexDict[leftElem] + '-' + elementIndexDict[rightElem];
+						if(nextElem in equivalenceClasses){
+							oldElem = true;
+						}else{
+							for(gen of elements){
+								nextElem = nextElem.replace(ordDict[gen],'');
+							}
+							if(nextElem in equivalenceClasses){
+								oldElem = true;
+							}
+							var changing = true;
+							while(true){
+								var nextElemTemp = nextElem;
+								for(var equiv in equivalenceClasses){
+									nextElemTemp = nextElemTemp.replace(equiv,equivalenceClasses[equiv]);
+									nextElemTemp = nextElemTemp.replace('1','');
+								}
+								if(nextElemTemp == nextElem){
+									break;
+								}else{
+									nextElem = nextElemTemp;
+								}
+							}
+							for(var equiv of identity){
+								var equivL = nextElem + equiv;
+								var equivR = equiv + nextElem;
+								while(true){
+									var equivRTemp = equivR;
+									var equivLTemp = equivL;
+									for(gen of elements){
+										equivLTemp = equivLTemp.replace(ordDict[gen],'');
+										equivRTemp = equivRTemp.replace(ordDict[gen],'');
+									}
+									if(equivRTemp == equivR && equivLTemp == equivL){
+										break;
+									}else{
+										equivR = equivRTemp;
+										equivL = equivLTemp;
+									}
+								}
+								if(equivL in equivalenceClasses){
+									console.log(nextElem,'was in equivalenceClasses');
+									nextElem = equivalenceClasses[equivL];
+									oldElem = true;
+									break;
+								}else if(equivR in equivalenceClasses){
+									console.log(nextElem,'was in equivalenceClasses');
+									nextElem = equivalenceClasses[equivR];
+									oldElem = true;
+									break;
+								}else if(equivR == '' || equivL == ''){
+									oldElem = true;
+									break;
+								}else{
+									nextElemEquivalence[equivL] = nextElem;
+									nextElemEquivalence[equivR] = nextElem;
+								}	
+							}
+							console.log(nextElem);
+							console.log(nextElemEquivalence);
+						}
+						if(nextElem == ''){
+							cayleyTableDict[tablePosition] = '1';
+						}else{
+							cayleyTableDict[tablePosition] = nextElem;
+						}
+						if(!oldElem){
+							console.log('NEW');
+							newElems = true;
+							equivalenceClasses = Object.assign({}, equivalenceClasses, nextElemEquivalence);
+							seenTemp.add(nextElem);
+							indexElementDict[currIndexValue] = nextElem;
+							elementIndexDict[nextElem] = currIndexValue;
+							currIndexValue++;
+						}
+					}	
+				}
+				equivalenceClasses = dictCopy(equivalenceClassesTemp, equivalenceClasses);
+				seen = copy(seenTemp, seen);
+			}
+			console.log(seen)
+			cayleyMatrix(cayleyTableDict, indexElementDict);
+		}
+		
+		function zeroSquareMatrix(size){
+			var matrix = []
+			for(var i = 0; i <= size; i++){
+				var row = [];
+				for(var j = 0; j <= size; j++){
+					row.push('1');
+				}
+				matrix.push(row);
+			}
+			return matrix;
+		}
+		var nodes = [];
+		var edges = [];
+		var cayleyMatrixVar = [['*','1','a','aa'],
+							   ['1','1','a','aa'],
+							   ['a','a','aa','1'],
+							   ['aa','aa','1','a']];
+		var inverseElementDictGlobal = {'a':1,'aa':2};
+		
+		function cayleyMatrix(positionDict, elementDict){
+			var maxSize = document.getElementById('tableSize').value + 1;
+			if(Object.keys(elementDict).length < maxSize){
+				var table = zeroSquareMatrix(Object.keys(elementDict).length);
+				maxSize = Object.keys(elementDict).length + 1;
+			}else{
+				var table = zeroSquareMatrix(maxSize);
+			}
+			table[0][0] = '*';
+			table[1][1] = '1';
+			table[0][1] = '1';
+			table[1][0] = '1';
+			inverseElementDict = {};
+			for(var i = 1; i < maxSize - 1; i++){
+				inverseElementDict[elementDict[i]] = i;
+				table[i + 1][0] = elementDict[i];
+				table[i + 1][1] = elementDict[i];
+				table[0][i + 1] = elementDict[i];
+				table[1][i + 1] = elementDict[i];
+			}
+			var placeHolderDict = new Set();
+			for(var coords in positionDict){
+				var [x,y] = coords.split('-');
+				x = parseInt(x);
+				y = parseInt(y);
+				if(positionDict[coords] in equivalenceClasses){
+					table[x + 1][y + 1] = equivalenceClasses[positionDict[coords]];
+				}else{
+					table[x+1][y+1] = 'PLACEHOLDER';
+					placeHolderDict.add(coords);
+				}
+			}
+			console.log(placeHolderDict);
+			function placeHolderReplace(coords){
+				var [x,y] = coords.split('-');
+				x = parseInt(x);
+				y = parseInt(y);
+				var row = new Set(table[x + 1]);
+				console.log(coords);
+				console.log(row);
+				var col = new Set();
+				for(var i = 1; i < maxSize - 1; i++){
+					col.add(table[i][y+1]);
+				}
+				console.log(col);
+				
+				for(var element in inverseElementDict){
+					if(!(row.has(element)) && !(col.has(element))){
+						table[x+1][y+1] = element;
+						break;
+					}
+					table[x+1][y+1] = '1';
+				}
+				
+			}
+			placeHolderDict.forEach(placeHolderReplace);
+
+			console.log(equivalenceClasses);
+			console.log(table);
+			matrixToTable(table);
+			writeEdgeChecks(inverseElementDict, elements);
+			nodes = graphNodes(table);
+			edges = graphEdges(table, inverseElementDict);
+			cayleyMatrixVar = table;
+			inverseElementDictGlobal = inverseElementDict;
+			networkGraph(nodes, edges);
+		}
+		
+		function graphNodes(cayleyTable){
+			return cayleyTable[0].slice(1);
+		}
+		
+		function graphEdges(cayleyTable, elementDict){
+			console.log(elementDict);
+			var edges = [];
+			var size = cayleyTable.length - 1;
+			for(var element in elementDict){
+				var id = 'edge-' + elementDict[element].toString();
+				var box = document.getElementById(id).checked
+				if(box){
+					var column = elementDict[element] + 1; 
+					for(var elemIndex = 1; elemIndex <= size; elemIndex++){
+						var elem1 = cayleyTable[elemIndex][0];
+						var elem2 = cayleyTable[elemIndex][column];
+						var edge = [elem1, elem2, element];
+						edges.push(edge);
+					}
+				}
+			}
+			return edges;
+		}
+		
+		function matrixToTable(matrix){
+			var table = document.createElement('table');
+			table.className = 'table table-sm';
+			var tableBody = document.createElement('tbody');
+			var head = document.createElement('thead');
+			matrix.forEach(function(row, rowIndex){
+				var HTMLrow = document.createElement('tr');
+				row.forEach(function(cell, cellIndex){
+					if(cellIndex > 0 && rowIndex > 0){ 
+						var HTMLcell = document.createElement('td');
+					}else{
+						var HTMLcell = document.createElement('th');
+						HTMLcell.scope = 'col';
+					}
+					HTMLcell.appendChild(document.createTextNode(cell));
+					HTMLrow.appendChild(HTMLcell);
+				})
+				if(rowIndex > 0){
+					tableBody.appendChild(HTMLrow);
+				}else{
+					head.appendChild(HTMLrow);
+				} 
+			})
+			table.appendChild(head);
+			table.appendChild(tableBody);
+			document.getElementById("CayleyTable").innerHTML = '';
+			document.getElementById("CayleyTable").appendChild(table);
+		}
+		
+		function networkGraph(nodeArray, edgeArray){
+			// create an array with nodes
+			var nodeDataSet = [];
+			for(var element of nodeArray){
+				var nodeData = {id: element, label: element};
+				nodeDataSet.push(nodeData);
+			}
+			var nodes = new vis.DataSet(nodeDataSet);
+
+			// create an array with edges
+			var edgeDataSet = [];
+			for(var edge of edgeArray){
+				var fromNode = edge[0];
+				var toNode = edge[1];
+				var generator = edge[2];
+				var edgeData = {from: fromNode, to: toNode, label: generator, arrows: 'to'};
+				edgeDataSet.push(edgeData);
+			}
+			var edges = new vis.DataSet(edgeDataSet);
+
+			  // create a network
+			  var container = document.getElementById('mynetwork');
+			  var data = {
+				nodes: nodes,
+				edges: edges
+			  };
+			  var options = {};
+			  var network = new vis.Network(container, data, options);
+		}
+	</script>
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-default bg-fade">
+	  <a class="navbar-brand" href="#" style="color: white;">Abstract Algebra</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto" style = "li a{color: white;}">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#" style = "color:white;">Educational Resources <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#" style = "color: white;">About</a>
+		</ul>
+	  </div>
+	</nav>
+
+	<div id = "wrapper">
+		<div style = "position: fixed; width: 250px; float:left;background-color: rgb(40,40,40); height:100vh; z-index: 99999999; margin-top: 55px;">
+			<h5 style = "color: white; text-align: center;" data-step="2" data-intro="In abstract algebra, a generating set of a group is a subset such that every element of the group can be expressed as the combination (under the group operation) of finitely many elements of the subset and their inverses.">Generating Elements</h5>
+			<form id = "generatingElems">
+				<div class = "generatingElements" style = "color: white; margin-left:40px;" id = "generator0">
+					<input type = "text" size = "1" placeholder = "a" id = "base0" data-step="3" data-intro="This is where you input your base number for the generating element" >
+					<h5 style = "float: left">^</h5>
+					<input type = "text" size = "1" placeholder = "5" id = "exp0" data-step="4" data-intro="This is where you input your exponent number for the generating element">
+					<h5 style = "float: left">= 1&nbsp;&nbsp;</h5>
+					<button style = "background-color: red; color: white; float:left; border: none; font-size:10px; margin-top: 5px;" onclick = "removeGenerator(0)" data-step="6" data-intro="You can click here to remove a genrating element">&#10006;</button>
+				</div>
+			</form>
+			<div style = "text-align: center;">
+				<button onclick = "addGenerator()" data-step="5" data-intro="Click here to add another generating element"> Add Generating Element </button>
+				<button onclick = "writeInverseDict();" data-step="7" data-intro="Click here to write your defining equations"> Write Defining Equations</button>
+			</div>
+			<div class="container" style = "color: white; text-align: center;" data-step="1" data-intro="Click 'Next' to walk through all the cool features that this tool offers!">
+            <p>Take a tour to learn how to use the site!</p>
+            <p><a class="btn btn-primary btn-lg" role="button" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start(); introJs().setOption('overlayOpacity',0);">Start Tour »</a></p>
+			</div>
+		</div>
+		<div style="position:absolute; z-index: 0; background-color: rgb(40,40,40); height: 100vh;">
+		</div>
+		<div style = "position: relative; float:left; margin-left:260px; width:70%; margin-top: 55px; z-index:-1;">
+			<h5>Defining Equations:</h5>
+			<div id = "definingEquations" style = "white-space: nowrap;">
+				
+			</div>
+			<form>
+				<div class = "input-group">
+					<input type = "button" onclick = "parseEquations()" class = "btn" value = "Compute Group"data-step="9" data-intro="Click here to compute your group!" >
+				</div>
+		
+				<div class = "input-group">
+					<div class = "input-group-prepend">
+						<span class = "input-group-text">Table Size</span>
+					</div>
+					<div class = "col-xs-1">
+						<input type = "text" id = "tableSize" class = "form-control" value = "10" data-step="8" data-intro="This is where you input your table size.">
+					</div>
+				</div>
+			</form>
+			
+			<div style = "background-color: rgb(245,245,245);">
+				<div id = "CayleyTable" style = "overflow: scroll; max-height: 500px;">
+				<table class="table table-sm">
+				  <thead>
+					<tr>
+					  <th scope="col">*</th>
+					  <th scope="col">1</th>
+					  <th scope="col">a</th>
+					  <th scope="col">a<sup>2</sup></th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th scope="col">1</th>
+					  <td>1</td>
+					  <td>a</td>
+					  <td>a<sup>2</sup></td>
+					</tr>
+					<tr>
+					  <th scope="col">a</th>
+					  <td>a</td>
+					  <td>a<sup>2</sup></td>
+					  <td>1</td>
+					</tr>
+					<tr>
+					  <th scope="col">a<sup>2</sup></th>
+					  <td >a<sup>2</sup></td>
+					  <td>1</td>
+					  <td>a</td>
+					</tr>
+				  </tbody>
+				</table>
+				</div>
+		<div>
+		Select edges to display:
+		<div id = "edgeChecks">
+			<div class="form-check form-check-inline">
+			<label class="form-check-label"><input class="form-check-input" type="checkbox" id="edge-1" checked>a</label>
+			<label class="form-check-label"><input class="form-check-input" type = "checkbox" id = "edge-2">aa</label>
+			</div>
+		</div>
+		<div>
+			<button class="btn" onclick = "nodes = graphNodes(cayleyMatrixVar); 
+										   edges = graphEdges(cayleyMatrixVar, inverseElementDictGlobal);
+										   networkGraph(nodes, edges);"> Re-draw Graph
+			</button>
+		</div>
+		</div>
+		<div id = "mynetwork" style="position: relative; float:left; width:100%">
+			<div class="vis-network" tabindex="900" style="position: relative; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><canvas width="100" height="100" style="position: relative; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div>
+			
+			<script type="text/javascript">
+			  
+			  
+			  // create an array with nodes
+			  var nodes = new vis.DataSet([
+				{id: 1, label: '1'},
+				{id: 2, label: 'a'},
+				{id: 3, label: 'a^2'}
+			  ]);
+
+			  // create an array with edges
+			  var edges = new vis.DataSet([
+				{from: 1, to: 2, arrows:'to', label: 'a'},
+				{from: 2, to: 3, arrows: 'to', label: 'a'},
+				{from: 3, to: 1, arrows: 'to', label: 'a'},
+
+			  ]);
+
+			  // create a network
+			  var container = document.getElementById('mynetwork');
+			  var data = {
+				nodes: nodes,
+				edges: edges
+			  };
+			  var options = {layout: {improvedLayout: true}};
+			  var network = new vis.Network(container, data, options);
+			</script>
+			</div>	
+		</div>
+	</div>
+</div>
+      
+		
+        
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.min.js"></script>
+  </body>
+</html>

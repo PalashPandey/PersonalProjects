@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/web_cmc.css" type="text/css" />
+<link rel="stylesheet" href="/css/web_defaultprint.css" type="text/css" media="print" />
+<title>Job Search Shopping Cart</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript" />
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding --&gt;
+</script>
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding --&gt;
+</script>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onmouseover="window.status='Go to Main Content'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to Main Content'; return true" onblur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>Steinbright Career Development Center Services</h1></div><div class="headerlinksdiv">
+<span class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onmouseover="window.status='Skip Module Navigation Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip Module Navigation Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip Module Navigation Links</a>
+</p><table class="plaintable" summary="This is main table for displaying Tab Items." width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="pldefault">
+<table class="plaintable" summary="This table displays Tab Items." cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onmouseover="window.status='New Personal Information'; return true" onmouseout="window.status=''; return true" onfocus="window.status='New Personal Information'; return true" onblur="window.status=''; return true">Personal Information</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/bwszkfrag.P_DisplayFinResponsibility" onmouseover="window.status='Student Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Student Services'; return true" onblur="window.status=''; return true">Student Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_FinAidMainMnu" onmouseover="window.status='Financial Aid Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Financial Aid Services'; return true" onblur="window.status=''; return true">Financial Aid Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="tabon" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=amenu.P_CMCMnu" onmouseover="window.status='Career Management Center Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Career Management Center Services'; return true" onblur="window.status=''; return true">SCDC Services</a>
+</td>
+<td class="bgtabon" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+</map>
+</span>
+<a name="skip_Module_Navigation_Links_H"></a>
+</div>
+<table class="plaintable" summary="This table displays Menu Items and Banner Search textbox." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<div class="headerlinksdiv2">
+<form action="/pls/duprod/twbksrch.P_ShowResults" method="post">
+Search
+<span class="fieldlabeltextinvisible"><label for="keyword_in_id"><span class="fieldlabeltext">Search</span></label></span>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" id="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<span class="pageheaderlinks">
+<a href="/cmchelp/student/hwczksjsd.P_StudentJobCart/hwczksjsd.P_StudentJobCart.htm" accesskey="H" onclick="popup = window.open('/cmchelp/student/hwczksjsd.P_StudentJobCart/hwczksjsd.P_StudentJobCart.htm', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onmouseover="window.status='';  return true" onmouseout="window.status=''; return true" onfocus="window.status='';  return true" onblur="window.status=''; return true" class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="pagetitlediv">
+<table class="plaintable" summary="This table displays title and static header displays." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<h2>Job Search Shopping Cart</h2>
+</td>
+<td class="pldefault">
+ 
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<div class="staticheaders">
+</div>
+</div></td>
+</tr>
+<tr>
+<td class="bg3" width="100%" colspan="3"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td>
+</tr>
+</tbody></table>
+<a name="main_content"></a>
+</div>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+
+<table class="SSDtableS" summary="This table shows the student's coordinator and their contact info.">
+<tbody><tr>
+<td></td><td class="SSDrightcell"><div class="SSDrightcellDiv"><div style="text-align: left">
+<span class="smallernowraptext">Co-op Advisor: Ms Kelsie J LeVan</span>
+<br />
+<span class="smallernowraptext">215-571-4209</span>
+<br />
+<a href="mailto:kelsie.j.levan@drexel.edu" onmouseover="window.status='Send email to  at kelsie.j.levan@drexel.edu';  return true" onmouseout="window.status=''; return true"><span class="smallernowraptext">kelsie.j.levan@drexel.edu</span></a>
+<br />
+<br />
+<span class="smallernowraptext">Your coop term(s) by academic year are:</span>
+<span class="smallernowraptext"><br />Fall Quarter 18-19, Winter Quarter 18-19</span>
+<span class="smallernowraptext"><br />Fall Quarter 19-20, Winter Quarter 19-20</span>
+<span class="smallernowraptext"><br />Fall Quarter 20-21, Winter Quarter 20-21 </span>
+</div></div></td>
+</tr>
+</tbody></table>
+
+<br />
+<p>
+<span class="strongtext">Service Type: </span>
+Co-op Experience
+</p>
+<p>
+You have requested <span class="strongtext">0</span> interviews for A-Round
+<br />
+You have 
+<span class="strongtext">35</span>
+ jobs in your shopping cart.
+<br />
+Go to the 
+<a href="/pls/duprod/hwczksrmp.P_StudentRequestMaintSelect?i_user_type=S" onmouseover="window.status='Go to the Interview Request Maintenance Select page'; return true" onmouseout="window.status=''; return true">Interview Request Maintenance Selection</a>
+ page.
+</p>
+<span class="strongtext">For </span>
+A-Round
+<span class="strongtext"> the last day interviews may be requested is: </span>
+<span class="redtext">May 16th, 2018</span>
+<br />
+<p>Jobs in this list are in your shopping cart. You have NOT requested an interview. Jobs will be removed from the shopping cart when the appropriate interview request deadline has passed.</p>
+<br />
+<p>You may 
+<span class="strongtext">request an interview</span>
+ by clicking on the job title link.</p>
+<p>You may 
+<span class="strongtext">remove a job from the cart</span>
+ by clicking on <img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></p>
+<br />
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=4&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return to the Job Search Results page Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /><span class="greensmallesttext">to Jobs List</span></a>
+<br />
+<table class="dataentrytable" summary="This table shows the contents of the student's shopping cart." cellspacing="0">
+<tbody><tr>
+<td colspan="3" class="delabel" scope="row"><div class="centeraligntext">Records 1 to 35 of 35 shown</div></td>
+</tr>
+<tr>
+<td colspan="3" class="dedefault"><hr size="5" /></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=19990&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Computer Support Representative- Philadelphia PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=19990&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Computer Support Representative- Philadelphia PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Computer Support Representative- Philadelphia PA (19990)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>The Wharton School (5017)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=201219&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Associate Siebel CRM Analyst Co-op/ King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=201219&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Associate Siebel CRM Analyst Co-op/ King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Associate Siebel CRM Analyst Co-op/ King of Prussia, PA (201219)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>CSL Behring  (58086)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=243790&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Software Engineering Co-op/ Center City Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=243790&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Software Engineering Co-op/ Center City Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Software Engineering Co-op/ Center City (243790)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Bentley Systems, Inc. (1047)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=308507&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Co-Op Developer (.NET/Oracle)/ Mt Laurel, NJ Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=308507&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Co-Op Developer (.NET/Oracle)/ Mt Laurel, NJ Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Co-Op Developer (.NET/Oracle)/ Mt Laurel, NJ (308507)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Automotive Resources International  (109003)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=310321&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete RF Field Engineering Co-op/Medford, NJ Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=310321&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View RF Field Engineering Co-op/Medford, NJ Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">RF Field Engineering Co-op/Medford, NJ (310321)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Intenna Systems, Inc (30409)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=317140&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete ISD Co-Op Developer / Mt. Laurel, NJ Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=317140&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View ISD Co-Op Developer / Mt. Laurel, NJ Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">ISD Co-Op Developer / Mt. Laurel, NJ (317140)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Automotive Resources International  (109003)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=331723&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete IT Compliance Coop/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=331723&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View IT Compliance Coop/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">IT Compliance Coop/Philadelphia, PA (331723)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>CHUBB (formerly ACE USA) (554)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=332924&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Assistant Electrical Engineer/ Philadelphia Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=332924&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Assistant Electrical Engineer/ Philadelphia Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Assistant Electrical Engineer/ Philadelphia (332924)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>BresslerGroup (67506)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=338593&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Global Business Intelligence Analyst/ Collegeville, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=338593&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Global Business Intelligence Analyst/ Collegeville, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Global Business Intelligence Analyst/ Collegeville, PA (338593)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Pfizer (3926)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=338848&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Systems Administrator Co-op - Center City Location Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=338848&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Systems Administrator Co-op - Center City Location Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Systems Administrator Co-op - Center City Location (338848)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Cohen, Placitella and Roth (40373)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=342682&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Digital Accessibility Analyst, Northern Delaware, Wilmington Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=342682&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Digital Accessibility Analyst, Northern Delaware, Wilmington Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Digital Accessibility Analyst, Northern Delaware, Wilmington (342682)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>JPMorgan Chase &amp; Co (33248)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=345692&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete AgroFresh IT Co-op / Philadelphia, PA (Center City) Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=345692&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View AgroFresh IT Co-op / Philadelphia, PA (Center City) Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">AgroFresh IT Co-op / Philadelphia, PA (Center City) (345692)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>AgroFresh (121670)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=348845&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Developer Co-op Malvern, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=348845&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Developer Co-op Malvern, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Developer Co-op Malvern, PA (348845)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>EZ Soft, Inc. (25263)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=349563&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Information Technology Co-op/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=349563&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Information Technology Co-op/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Information Technology Co-op/ Philadelphia, PA (349563)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>CHUBB (formerly ACE USA) (554)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=349750&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Web Developer / Analyst, King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=349750&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Web Developer / Analyst, King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Web Developer / Analyst, King of Prussia, PA (349750)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>CSL Behring  (58086)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=350206&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Clinical Data Analyst - Co-op / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=350206&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Clinical Data Analyst - Co-op / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Clinical Data Analyst - Co-op / Philadelphia, PA (350206)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Children's Hospital of Philadelphia (1398)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=352154&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete After-School Tutoring Teacher Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=352154&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View After-School Tutoring Teacher Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">After-School Tutoring Teacher (352154)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Olympik Tots Childcare &amp; Learning Center (122489)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=352247&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Quality Assurance Analyst, Professional Services/King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=352247&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Quality Assurance Analyst, Professional Services/King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Quality Assurance Analyst, Professional Services/King of Prussia, PA (352247)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Fiserv (100887)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=352906&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Contracting Associate/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=352906&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Contracting Associate/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Contracting Associate/Philadelphia, PA (352906)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>InstaMed Communications, LLC (33488)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=353085&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Temporary Research Programmer/ New Brunswick, NJ Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=353085&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Temporary Research Programmer/ New Brunswick, NJ Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Temporary Research Programmer/ New Brunswick, NJ (353085)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Rutgers University (36759)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=354754&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Project Data Analyst Co-op/King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=354754&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Project Data Analyst Co-op/King of Prussia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Project Data Analyst Co-op/King of Prussia, PA (354754)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Radial (147362)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=354981&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete IoT Platform Manager/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=354981&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View IoT Platform Manager/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">IoT Platform Manager/ Philadelphia, PA (354981)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>SmarTECHS (147442)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=354996&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Information Technology-MIS Intern/Wayne, PA  Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=354996&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Information Technology-MIS Intern/Wayne, PA  Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Information Technology-MIS Intern/Wayne, PA  (354996)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Escalon Medical Corp. (51773)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=356195&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete IT Co-op/Intern (Blue Bell, PA) Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=356195&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View IT Co-op/Intern (Blue Bell, PA) Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">IT Co-op/Intern (Blue Bell, PA) (356195)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>IPS - Integrated Project Services (2791)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=356952&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Email Marketing Intern/Paoli, PA  Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=356952&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Email Marketing Intern/Paoli, PA  Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Email Marketing Intern/Paoli, PA  (356952)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Turn5, Inc. (138038)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=356959&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Information Services Co-op/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=356959&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Information Services Co-op/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Information Services Co-op/ Philadelphia, PA (356959)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Children's Hospital of Philadelphia (1398)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=356964&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Mobile Application Developer/ Collegeville, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=356964&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Mobile Application Developer/ Collegeville, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Mobile Application Developer/ Collegeville, PA (356964)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Pfizer (3926)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357037&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Data Analytics Co-op, Singapore Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357037&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Data Analytics Co-op, Singapore Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Data Analytics Co-op, Singapore (357037)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Wego (143583)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357098&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Equal Justice Center Co-op Experience/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357098&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Equal Justice Center Co-op Experience/ Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Equal Justice Center Co-op Experience/ Philadelphia, PA (357098)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Philadelphia Bar Foundation (140462)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357112&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Philadelphia Co-Op 2018 Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357112&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Philadelphia Co-Op 2018 Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Philadelphia Co-Op 2018 (357112)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Protiviti Inc.  (10116)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357126&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete AI Data Engineering/Data Science Co-op/ Tysons, Virginia  Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357126&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View AI Data Engineering/Data Science Co-op/ Tysons, Virginia  Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">AI Data Engineering/Data Science Co-op/ Tysons, Virginia  (357126)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>DXC Technology (147642)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357132&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Marketing/Social - B2C + B2B / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357132&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Marketing/Social - B2C + B2B / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Marketing/Social - B2C + B2B / Philadelphia, PA (357132)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Simply Good Jars (149065)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357133&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Research/Analyst / Philadelphia, PA  Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357133&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Research/Analyst / Philadelphia, PA  Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Research/Analyst / Philadelphia, PA  (357133)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Simply Good Jars (149065)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357164&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Office Co-op/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=357164&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Office Co-op/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Office Co-op/Philadelphia, PA (357164)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>ePro Associates  (138545)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td class="dedefault"><a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=51545&amp;i_begin_term=201815&amp;i_action=R&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Delete Technical Support - Drexel / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/delete-new.gif" alt="Delete" class="headerImg" title="Delete" name="DeleteCan-Small" hspace="0" vspace="0" border="0" height="16" width="16" /></a></td>
+<td class="dedefault">
+<a href="/pls/duprod/hwczkslib.P_StudentJobDisplay?i_user_type=S&amp;i_job_num=51545&amp;i_begin_term=201815&amp;i_source=S&amp;i_return=/pls/duprod/hwczksjsd.P_StudentJobCart?i_user_type=S&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D4%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='View Technical Support - Drexel / Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true"><span class="strongtext">Technical Support - Drexel / Philadelphia, PA (51545)</span></a>
+<span class="smallertext"> ¤ <span class="strongtext">Employer: </span>Drexel University (1874)</span>
+</td>
+<td class="dedefault"><div class="rightaligntext">
+</div></td>
+</tr>
+<tr>
+<td colspan="3" class="dedefault"><hr size="5" /></td>
+</tr>
+<tr>
+<td colspan="3" class="delabel" scope="row"><div class="centeraligntext">Records 1 to 35 of 35 shown</div></td>
+</tr>
+</tbody></table>
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=4&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return to the Job Search Results page Job';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /><span class="greensmallesttext">to Jobs List</span></a>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table class="plaintable" summary="This is table displays line separator at end of the page." width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+<a href="#top" onmouseover="window.status='Skip to top of page'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip to top of page'; return true" onblur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</div>
+<div class="footerbeforediv">
+
+</div>
+<div class="footerlinksdiv">
+<span class="pagefooterlinks">
+<map name="SCDC_Services_Main_Menu_Links_F" title="SCDC Services Main Menu Links">
+<p>
+<a href="#skip_SCDC_Services_Main_Menu_Links_F" onmouseover="window.status='Skip SCDC Services Main Menu Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip SCDC Services Main Menu Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip SCDC Services Main Menu Links</a>
+</p><p>[ <a href="/pls/duprod/hwczkresm.P_ResumeSelectStud" onmouseover="window.status='Resume Development'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Resume Development'; return true" onblur="window.status=''; return true">Resume Development for Co-op</a>
+ | <a href="/pls/duprod/hwczksjsc.P_StudentJobSearchStud" onmouseover="window.status='Search for Co-op Jobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search for Co-op Jobs'; return true" onblur="window.status=''; return true">Search for Co-op Jobs</a>
+ | <a href="http://drexelscdc-csm.symplicity.com/" onmouseover="window.status='Go to DragonJobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to DragonJobs'; return true" onblur="window.status=''; return true">DragonJobs</a>
+ | <a href="/pls/duprod/hwczksrmp.P_StudentRequestMaintStud" onmouseover="window.status='Maintain your Interview Requests'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Maintain your Interview Requests'; return true" onblur="window.status=''; return true">Maintain your Co-Op Interview Requests</a>
+ | <a href="/pls/duprod/hwczkfsep.P_StudentESaPSelectStud" onmouseover="window.status='ES&amp;P Form Selection'; return true" onmouseout="window.status=''; return true" onfocus="window.status='ES&amp;P Form Selection'; return true" onblur="window.status=''; return true">ES&amp;P Form Completion</a>
+ | <a href="/pls/duprod/hwczkfsea.P_StudentESaPArchiveStud" onmouseover="window.status='Search the ES&amp;P Archives'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search the ES&amp;P Archives'; return true" onblur="window.status=''; return true">Search the ES&amp;P Archives</a>
+ | <a href="/pls/duprod/hwczkmsph.P_PlacementHistoryDisp" onmouseover="window.status='Your Co-op Employment Records'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Your Co-op Employment Records'; return true" onblur="window.status=''; return true">Your Co-op Employment Records</a>
+ ]
+
+
+<a name="skip_SCDC_Services_Main_Menu_Links_F"></a>
+</p></map></span></div>
+<div class="footerafterdiv">
+
+</div>
+<div class="globalafterdiv">
+
+</div>
+<div class="globalfooterdiv">
+
+</div>
+<div class="pagefooterdiv">
+<span class="releasetext">Release: 013</span>
+</div>
+<div class="poweredbydiv">
+</div>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="banner_copyright"> <br /><h5>© 2018 Ellucian Company L.P. and its affiliates.<br /></h5></div>
+
+
+</body></html>

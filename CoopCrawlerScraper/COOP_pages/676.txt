@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/web_cmc.css" type="text/css" />
+<link rel="stylesheet" href="/css/web_defaultprint.css" type="text/css" media="print" />
+<title>Job View</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript" />
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding --&gt;
+</script>
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding --&gt;
+</script>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onmouseover="window.status='Go to Main Content'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to Main Content'; return true" onblur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>Steinbright Career Development Center Services</h1></div><div class="headerlinksdiv">
+<span class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onmouseover="window.status='Skip Module Navigation Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip Module Navigation Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip Module Navigation Links</a>
+</p><table class="plaintable" summary="This is main table for displaying Tab Items." width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="pldefault">
+<table class="plaintable" summary="This table displays Tab Items." cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onmouseover="window.status='New Personal Information'; return true" onmouseout="window.status=''; return true" onfocus="window.status='New Personal Information'; return true" onblur="window.status=''; return true">Personal Information</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/bwszkfrag.P_DisplayFinResponsibility" onmouseover="window.status='Student Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Student Services'; return true" onblur="window.status=''; return true">Student Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_FinAidMainMnu" onmouseover="window.status='Financial Aid Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Financial Aid Services'; return true" onblur="window.status=''; return true">Financial Aid Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="tabon" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=amenu.P_CMCMnu" onmouseover="window.status='Career Management Center Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Career Management Center Services'; return true" onblur="window.status=''; return true">SCDC Services</a>
+</td>
+<td class="bgtabon" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+</map>
+</span>
+<a name="skip_Module_Navigation_Links_H"></a>
+</div>
+<table class="plaintable" summary="This table displays Menu Items and Banner Search textbox." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<div class="headerlinksdiv2">
+<form action="/pls/duprod/twbksrch.P_ShowResults" method="post">
+Search
+<span class="fieldlabeltextinvisible"><label for="keyword_in_id"><span class="fieldlabeltext">Search</span></label></span>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" id="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<span class="pageheaderlinks">
+<a href="/wtlhelp/twbhhelp.htm" accesskey="H" onclick="popup = window.open('/wtlhelp/twbhhelp.htm', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onmouseover="window.status='';  return true" onmouseout="window.status=''; return true" onfocus="window.status='';  return true" onblur="window.status=''; return true" class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="pagetitlediv">
+<table class="plaintable" summary="This table displays title and static header displays." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<h2>Job View</h2>
+</td>
+<td class="pldefault">
+ 
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<div class="staticheaders">
+</div>
+</div></td>
+</tr>
+<tr>
+<td class="bg3" width="100%" colspan="3"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td>
+</tr>
+</tbody></table>
+<a name="main_content"></a>
+</div>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+
+<table class="SSDtableS" summary="This table shows the student's coordinator and their contact info.">
+<tbody><tr>
+<td></td><td class="SSDrightcell"><div class="SSDrightcellDiv"><div style="text-align: left">
+<span class="smallernowraptext">Co-op Advisor: Ms Kelsie J LeVan</span>
+<br />
+<span class="smallernowraptext">215-571-4209</span>
+<br />
+<a href="mailto:kelsie.j.levan@drexel.edu" onmouseover="window.status='Send email to  at kelsie.j.levan@drexel.edu';  return true" onmouseout="window.status=''; return true"><span class="smallernowraptext">kelsie.j.levan@drexel.edu</span></a>
+<br />
+<br />
+<span class="smallernowraptext">Your coop term(s) by academic year are:</span>
+<span class="smallernowraptext"><br />Fall Quarter 18-19, Winter Quarter 18-19</span>
+<span class="smallernowraptext"><br />Fall Quarter 19-20, Winter Quarter 19-20</span>
+<span class="smallernowraptext"><br />Fall Quarter 20-21, Winter Quarter 20-21 </span>
+</div></div></td>
+</tr>
+</tbody></table>
+
+<br />
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=24&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+<br />
+<p>
+<span class="strongtext">Employer: </span>
+Philadelphia Fire Department (117121)
+<br />
+<span class="strongtext">Hiring Office Location: </span>
+Philadelphia, PA (1)
+</p>
+<span class="strongtext">Job's Type: </span>
+<span class="smallertext">Co-op Experience</span>
+<br />
+<span class="strongtext">Job's Duration: </span>
+<span class="smallertext">Fall/Winter (September 2018 - March 2019</span>
+<br />
+<span class="strongtext">Job's Length: </span>
+<span class="smallertext">2 terms</span>
+<br />
+<span class="strongtext">Job's Status: </span>
+<span class="smallertext">Active</span>
+<br />
+<br />
+<br />
+<table class="borderland" summary="This table holds the basic job description information." cellspacing="0">
+<tbody><tr>
+<td class="default"><div class="centeraligntext"><span class="largertext">COMPUTER USER SUPPORT SPECIALIST/Philadelphia, PA</span><br /><span class="smallertext">(357977)</span></div></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Division/Location/Company Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">Philadelphia Fire Department</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Non-Profit Co.: </span><span class="smallertext">Yes</span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Job Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">This is computer user support work at an advanced clerical 
+level. Employees in this class perform a variety of support 
+services directly for computer users in an assigned 
+department, including responding to requests for 
+assistance from a helpdesk, troubleshooting and resolving 
+problems with computers over the phone, by e-mail and in 
+person, and securing the assistance of higher level 
+information technology staff when necessary. Employees in 
+this class also provide informal advice and guidance, 
+and/or desktop one-on-one training, and/or classroom and 
+on-site training for groups for a wide variety of employees, 
+including managers, supervisors, professional and technical 
+staff and clerical employees. Expertise with various types 
+of computers, applications and software packages is 
+determined by the operational needs of the assigned 
+department. Employees provide services in a variety of 
+computer environments, including local area networks, 
+wide area networks and terminals attached to a mainframe 
+computer. Employees work under the supervision of an 
+administrative or technical superior.
+
+Help-Desk
+
+Answers users' inquiries in person and via telephone 
+concerning systems and software operations.
+Assists end users accessing computer systems and 
+software, including security and password problems.
+Acts as first level help desk assistant to provide technical 
+support in answering questions pertaining to software 
+applications and computer equipment.
+Answers, evaluates, and prioritizes incoming telephone 
+calls, voice mail, e-mail and in-person requests for 
+assistance and sets end-user expectations for resolution 
+time and communicates changes in status as necessary
+Assists users with the operation of their personal 
+computers.
+Recommends and/or performs minor actions to correct 
+problems with hardware and/or software on the telephone 
+and in person; refers more difficult problems to technical 
+specialists.
+Troubleshooting / Desktop Support
+
+Troubleshoots and identifies software, and/or hardware, 
+and/or network, and/or telecommunications problems as 
+called in by end-users, using diagnostic equipment as 
+necessary and follows through to resolution.
+Provides desktop support of all standard applications 
+including, but not limited to, Windows operating systems.
+Travels to worksites as necessary.
+Interviews users to gather information about problems 
+and, if possible, leads user through diagnostic procedures 
+to determine the problem.
+Standards and Procedures
+
+Adheres to security procedures and assists in 
+administration and adherence to established standards and 
+procedures.
+Installation, Configuration and Testing of Hardware and 
+Software
+
+Installs, configures and tests hardware and software to 
+meet user needs, including internal tape drives, CD-ROM 
+drives, modems, fax cards, printers, scanners, 
+telecommunications equipment and network cards.
+Assists technical staff in installing, maintaining and/or 
+upgrading PC-networked software and peripheral 
+equipment such as monitors, keyboards, printers, cable 
+and wiring connections, phones and audiovisual equipment.
+Inventory/Product Evaluation
+
+Maintains up-to-date and accurate inventory and 
+documentation of software and/or hardware and/or 
+telecommunication system and maintenance log for all 
+service requests and communicates inventory changes, 
+equipment needs and low inventory levels.
+Reviews, evaluates and makes hardware/software 
+recommendations and discusses with immediate supervisor 
+and other staff.
+Securing Support
+
+Works closely with other IT staff to insure clear 
+communication on outstanding issues, observed trends in 
+end user support and user problems.
+Works directly with higher level IT support staff to resolve 
+difficult problems including LAN, WAN and special 
+application issues.
+Training
+
+Schedules, conducts and assists in training and 
+instructional sessions for employees in data entry and 
+retrieval procedures, software applications for personal 
+computers, and network and/or Internet, 
+telecommunications and voicemail policies, features and 
+operations.
+Trains in unique departmental systems such as 
+FACTS/PACWIS, court reporting, resource tracking, etc. 
+and other systems applications utilized by assigned 
+departments.
+Recommends, provides, and develops training, including 
+development of instructional and reference materials for 
+the training sessions.
+Data Entry, Maintenance and Retrieval/Report Preparation
+
+Enters and/or updates data into system.
+Maintains information and activities in the databases and 
+maintains integrity of files and follows conventions for the 
+use as required.
+Creates, updates and maintains automated reporting tools, 
+such as spreadsheets.
+Checks printouts of processed data to correct errors in 
+coding or input.
+Reviews source materials and determines data to be 
+entered into database.
+Retrieves data from computerized records.
+Executes, prints and distributes reports for departmental 
+distribution.
+Prepares designs and graphic layouts to be used alone, or 
+with accompanying text, in presentations, newsletters, 
+billing formats, training materials, and a variety of 
+reporting formats.
+General Clerical
+
+Performs manual record-keeping, document distribution, 
+typing and other clerical tasks; maintains integrity of 
+computerized records and files.
+Performs related work as required.
+</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Unpaid Position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Job Location: </span><span class="smallertext">Center City Philadelphia</span><br />          <span class="smallertext">Philadelphia</span></td>
+
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Car required to get to work: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Number of Openings: </span><span class="smallertext">2</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Exposure to hazardous and/or biohazardous materials: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Travel required for position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Anticipated travel information: </span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Qualifications:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Recommended Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">KNOWLEDGE OF:
+Microsoft Office Suite (Word, Excel, PowerPoint, Access)
+Various software packages and operating systems currently 
+used by the department, including, but not limited to, 
+Windows 95, 97, 98, 2000 and Millenium, Lotus Notes, 
+cc:mail, Norton Antivirus, WordPerfect, Netscape 
+Navigator, Novell network operating system and 
+communication applications
+Computer Network system practices
+Basic LAN/WAN concepts
+Customer service principles and practices
+Data entry, maintenance and retrieval procedures
+Report preparation based on retrieval and formatting of 
+data contained in databases
+Office practices and procedures
+SKILL IN:
+Written and verbal communication
+Data entry and retrieval
+ABILITY TO:
+Identify problems, and resolve issues in a timely manner
+Learn the function, operations and computer needs of the 
+organization supported
+Learn other department designated application software 
+packages
+Deliver hands-on and classroom training for individuals and 
+groups of users
+Service computer devices and to diagnose and resolve 
+stoppages and failures
+Install software
+Repair or replace hardware on PC systems, if required by 
+job assignment
+Install and perform preventative maintenance on printers, 
+scanners and other peripheral equipment, if required by 
+job assignment
+Work independently in high-paced environment
+Communicate with all levels of staff
+Establish and maintain effective working relationships with 
+departmental associates</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Additional Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum GPA: </span><span class="smallertext">- None -</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum Work Authorization level required: </span><span class="smallertext">No Restriction</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Level(s) of Experience Sought: </span><span class="smallertext"><br />          Beginner - Limited or no previous work experience/first Co-op or <br />          Intermediate - Some related work or volunteer experience/second Co-op or <br />          Advanced - Previous related work experience/final Co-op</span></td>
+</tr>
+<tr>
+<td class="default">
+<span class="bluesmallertext">      Majors Sought: </span>
+<span class="smallertext">Bus. - Technology Innovation Management, </span>
+<span class="smallertext">Arts &amp; Sci. - Communications, </span>
+<span class="smallertext">Comp. - Computer Science, </span>
+<span class="smallertext">Comp. - Computing &amp; Security Technology, </span>
+<span class="smallertext">Comp. - Data Science, </span>
+<span class="smallertext">Comp. - Information Technology, </span>
+<span class="smallertext">Comp. - Information Systems</span>
+</td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Additional Application Instructions</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">-- None --</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Pre-Employment Screening Requirements : </span><span class="smallertext">None</span></td>
+</tr>
+</tbody></table>
+<table class="datadisplaytable" summary="This table shows some information about the current student with respect to this job in the 'Request Interview' phase." cellspacing="0">
+<tbody><tr>
+<td colspan="3" class="ddlabel">
+<span class="strongtext">Last day interviews may be requested: </span>
+<span class="redtext">May 16th, 2018</span>
+</td>
+</tr>
+<tr>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobRequest?i_user_type=S&amp;i_job_num=357977&amp;i_begin_term=201815&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D24%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Request an interview for COMPUTER USER SUPPORT SPECIALIST/Philadelphia, PA Job';  return true" onmouseout="window.status=''; return true">Request an Interview</a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=357977&amp;i_begin_term=201815&amp;i_action=A&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D24%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Place COMPUTER USER SUPPORT SPECIALIST/Philadelphia, PA in Job Shopping Cart';  return true" onmouseout="window.status=''; return true">Save for later <img src="/cmcgifs/cart.gif" class="headerImg" title="" name="Shopping Cart" hspace="0" vspace="0" border="0" /></a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=24&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+</td>
+</tr>
+</tbody></table>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table class="plaintable" summary="This is table displays line separator at end of the page." width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+<a href="#top" onmouseover="window.status='Skip to top of page'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip to top of page'; return true" onblur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</div>
+<div class="footerbeforediv">
+
+</div>
+<div class="footerlinksdiv">
+<span class="pagefooterlinks">
+<map name="SCDC_Services_Main_Menu_Links_F" title="SCDC Services Main Menu Links">
+<p>
+<a href="#skip_SCDC_Services_Main_Menu_Links_F" onmouseover="window.status='Skip SCDC Services Main Menu Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip SCDC Services Main Menu Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip SCDC Services Main Menu Links</a>
+</p><p>[ <a href="/pls/duprod/hwczkresm.P_ResumeSelectStud" onmouseover="window.status='Resume Development'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Resume Development'; return true" onblur="window.status=''; return true">Resume Development for Co-op</a>
+ | <a href="/pls/duprod/hwczksjsc.P_StudentJobSearchStud" onmouseover="window.status='Search for Co-op Jobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search for Co-op Jobs'; return true" onblur="window.status=''; return true">Search for Co-op Jobs</a>
+ | <a href="http://drexelscdc-csm.symplicity.com/" onmouseover="window.status='Go to DragonJobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to DragonJobs'; return true" onblur="window.status=''; return true">DragonJobs</a>
+ | <a href="/pls/duprod/hwczksrmp.P_StudentRequestMaintStud" onmouseover="window.status='Maintain your Interview Requests'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Maintain your Interview Requests'; return true" onblur="window.status=''; return true">Maintain your Co-Op Interview Requests</a>
+ | <a href="/pls/duprod/hwczkfsep.P_StudentESaPSelectStud" onmouseover="window.status='ES&amp;P Form Selection'; return true" onmouseout="window.status=''; return true" onfocus="window.status='ES&amp;P Form Selection'; return true" onblur="window.status=''; return true">ES&amp;P Form Completion</a>
+ | <a href="/pls/duprod/hwczkfsea.P_StudentESaPArchiveStud" onmouseover="window.status='Search the ES&amp;P Archives'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search the ES&amp;P Archives'; return true" onblur="window.status=''; return true">Search the ES&amp;P Archives</a>
+ | <a href="/pls/duprod/hwczkmsph.P_PlacementHistoryDisp" onmouseover="window.status='Your Co-op Employment Records'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Your Co-op Employment Records'; return true" onblur="window.status=''; return true">Your Co-op Employment Records</a>
+ ]
+
+
+<a name="skip_SCDC_Services_Main_Menu_Links_F"></a>
+</p></map></span></div>
+<div class="footerafterdiv">
+
+</div>
+<div class="globalafterdiv">
+
+</div>
+<div class="globalfooterdiv">
+
+</div>
+<div class="pagefooterdiv">
+<span class="releasetext">Release: 018</span>
+</div>
+<div class="poweredbydiv">
+</div>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="banner_copyright"> <br /><h5>© 2018 Ellucian Company L.P. and its affiliates.<br /></h5></div>
+
+
+</body></html>

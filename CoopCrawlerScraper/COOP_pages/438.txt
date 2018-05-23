@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/web_cmc.css" type="text/css" />
+<link rel="stylesheet" href="/css/web_defaultprint.css" type="text/css" media="print" />
+<title>Job View</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript" />
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding --&gt;
+</script>
+<script language="JavaScript" type="text/javascript">
+&lt;!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding --&gt;
+</script>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onmouseover="window.status='Go to Main Content'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to Main Content'; return true" onblur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1>Steinbright Career Development Center Services</h1></div><div class="headerlinksdiv">
+<span class="pageheaderlinks2">
+<map name="Module_Navigation_Links_H" title="Module Navigation Links">
+<p>
+<a href="#skip_Module_Navigation_Links_H" onmouseover="window.status='Skip Module Navigation Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip Module Navigation Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip Module Navigation Links</a>
+</p><table class="plaintable" summary="This is main table for displaying Tab Items." width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="pldefault">
+<table class="plaintable" summary="This table displays Tab Items." cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_GenMnu" onmouseover="window.status='New Personal Information'; return true" onmouseout="window.status=''; return true" onfocus="window.status='New Personal Information'; return true" onblur="window.status=''; return true">Personal Information</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/bwszkfrag.P_DisplayFinResponsibility" onmouseover="window.status='Student Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Student Services'; return true" onblur="window.status=''; return true">Student Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="taboff" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=bmenu.P_FinAidMainMnu" onmouseover="window.status='Financial Aid Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Financial Aid Services'; return true" onblur="window.status=''; return true">Financial Aid Services</a>
+</td>
+<td class="bgtaboff" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+<td class="tabon" height="22">
+<a href="/pls/duprod/twbkwbis.P_GenMenu?name=amenu.P_CMCMnu" onmouseover="window.status='Career Management Center Services'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Career Management Center Services'; return true" onblur="window.status=''; return true">SCDC Services</a>
+</td>
+<td class="bgtabon" height="22" valign="top" align="right">
+<img src="/wtlgifs/web_tab_corner_right.gif" alt="Tab Corner Right" class="headerImg" title="Tab Corner Right" name="web_tab_corner_right" hspace="0" vspace="0" border="0" height="20" width="8" />
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+</map>
+</span>
+<a name="skip_Module_Navigation_Links_H"></a>
+</div>
+<table class="plaintable" summary="This table displays Menu Items and Banner Search textbox." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<div class="headerlinksdiv2">
+<form action="/pls/duprod/twbksrch.P_ShowResults" method="post">
+Search
+<span class="fieldlabeltextinvisible"><label for="keyword_in_id"><span class="fieldlabeltext">Search</span></label></span>
+<input type="text" name="KEYWRD_IN" size="20" maxlength="65" id="keyword_in_id" />
+<input type="submit" value="Go" />
+</form>
+</div>
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<span class="pageheaderlinks">
+<a href="/wtlhelp/twbhhelp.htm" accesskey="H" onclick="popup = window.open('/wtlhelp/twbhhelp.htm', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onmouseover="window.status='';  return true" onmouseout="window.status=''; return true" onfocus="window.status='';  return true" onblur="window.status=''; return true" class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="pagetitlediv">
+<table class="plaintable" summary="This table displays title and static header displays." width="100%">
+<tbody><tr>
+<td class="pldefault">
+<h2>Job View</h2>
+</td>
+<td class="pldefault">
+ 
+</td>
+<td class="pldefault"><div class="rightaligntext">
+<div class="staticheaders">
+</div>
+</div></td>
+</tr>
+<tr>
+<td class="bg3" width="100%" colspan="3"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td>
+</tr>
+</tbody></table>
+<a name="main_content"></a>
+</div>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+
+<table class="SSDtableS" summary="This table shows the student's coordinator and their contact info.">
+<tbody><tr>
+<td></td><td class="SSDrightcell"><div class="SSDrightcellDiv"><div style="text-align: left">
+<span class="smallernowraptext">Co-op Advisor: Ms Kelsie J LeVan</span>
+<br />
+<span class="smallernowraptext">215-571-4209</span>
+<br />
+<a href="mailto:kelsie.j.levan@drexel.edu" onmouseover="window.status='Send email to  at kelsie.j.levan@drexel.edu';  return true" onmouseout="window.status=''; return true"><span class="smallernowraptext">kelsie.j.levan@drexel.edu</span></a>
+<br />
+<br />
+<span class="smallernowraptext">Your coop term(s) by academic year are:</span>
+<span class="smallernowraptext"><br />Fall Quarter 18-19, Winter Quarter 18-19</span>
+<span class="smallernowraptext"><br />Fall Quarter 19-20, Winter Quarter 19-20</span>
+<span class="smallernowraptext"><br />Fall Quarter 20-21, Winter Quarter 20-21 </span>
+</div></div></td>
+</tr>
+</tbody></table>
+
+<br />
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=15&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+<br />
+<p>
+<span class="strongtext">Employer: </span>
+RevZilla  (63486)
+<br />
+<span class="strongtext">Hiring Office Location: </span>
+Philadelphia, PA (1)
+</p>
+<span class="strongtext">Job's Type: </span>
+<span class="smallertext">Co-op Experience</span>
+<br />
+<span class="strongtext">Job's Duration: </span>
+<span class="smallertext">Fall/Winter (September 2018 - March 2019</span>
+<br />
+<span class="strongtext">Job's Length: </span>
+<span class="smallertext">2 terms</span>
+<br />
+<span class="strongtext">Job's Status: </span>
+<span class="smallertext">Active</span>
+<br />
+<br />
+<br />
+<table class="borderland" summary="This table holds the basic job description information." cellspacing="0">
+<tbody><tr>
+<td class="default"><div class="centeraligntext"><span class="largertext">Digital Marketing Co-Op [Retention Marketing]/ Philadelphia</span><br /><span class="smallertext">(353640)</span></div></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Division/Location/Company Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">RevZilla is a fast-growing, Philadelphia-based retailer bringing the 
+best possible shopping experience to every motorcycle enthusiast. 
+Founded in 2007 on a strong technology backbone, our core focus is on 
+our eCommerce business and delivering superior customer service. 
+RevZilla.com is one of the dominant players in the North American 
+Motorcycle Market as well as the industry leader in how-to, review 
+and lifestyle content for buying motorcycle gear online. Don't take our 
+word for it--RevZilla's been recognized as IT Innovator of the Year, 
+named one of PA and Philly's Best Places to Work, and rated Elite by 
+StellaService (in the top 10 retailers). RevZilla also has close ties to 
+Drexel with two of the founders--Anthony Bucci and Nick Auger--among 
+Drexel’s 40-under-40 as well as a number of other Drexel alumni on the 
+team.
+</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Non-Profit Co.: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Job Description:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">RevZilla is committed to providing an immersive learning 
+experience that takes students out of the confines of a cubicle and 
+straight into projects working side by side with some of the brightest 
+talent in the tech and marketing space. Our team hails from Google, 
+Urban Outfitters, QVC, NFL, Lockheed Martin, and Comcast among many 
+others - not only will you learn from the best in the eCommerce space, 
+you'll have an awesome time doing it! RevZilla caters lunch every 
+Tuesday and regularly gets the whole team together, whether it's for a 
+Two-Wheel Tuesday post-work party, ZillaPalooza (our zany spirit week) 
+during the summer, our insane holiday party in the winter, or any one of 
+our individual team nights out and regular opportunities to give back 
+to the community, you'll find that when you're here you're more than 
+just our Co-Op, you're truly one of us. A Co-Op with Revzilla will not just 
+give you the tools to succeed in the classroom once your time with us 
+comes to an end, it may even result in joining us full time! Fun fact: 
+many of our co-ops have gone on to join our team full time once they've 
+graduated! Are you ready to jump start your career at one of Philly's Top 
+Workplaces? We're ready for you!
+
+RevZilla is seeking our next Digital Marketing Co-op. We are on a 
+quest for moto dominance and need someone who hustles by default, 
+sweats the numbers, and is exceptionally detail-oriented to support the 
+team in making their marketing visions a reality.
+
+Working with  the Retention Marketing team, this position will be 
+responsible for the execution of Marketing efforts across a mix of 
+channels (including potentially: Social Marketing, Email Marketing 
+and Digital Merchandising).  We’re looking for someone who is 
+interested in tackling exciting challenges, learning new technology and 
+making strategic ecomm marketing decisions.
+
+We are looking for a motivated co-op interested in E-commerce 
+and online marketing, likely pursuing a major in: Marketing (especially 
+Interactive and New Media); Customer Analytics; Data Science; 
+Business Analytics; Mathematics. You will have an opportunity to work 
+with and learn from a team of top digital marketers.
+
+Role Responsibilities: 
+- Manage day-to-day digital marketing campaign tasks like: 
+Setting up 
+Social campaigns to amplify our content, track performance and 
+engaging the audience. 
+- Participating in the email planning process, coding assets and 
+sending emails 
+- On-site merchandising like creating collections and optimizing 
+performance
+- Track, analyze, and report on business impact and performance 
+(eg. ROI, customer acquisition, etc.) 
+- Learning fundamentals and best practices of digital channel 
+management 
+- Supporting cross-functional teams to align Marketing goals with 
+Creative, Product, Purchasing &amp; Technology teams
+</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Unpaid Position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Job Location: </span><span class="smallertext">Other Areas of the City of Philadelphia</span><br />          <span class="smallertext">Philadelphia</span></td>
+
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Car required to get to work: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Number of Openings: </span><span class="smallertext">1</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Exposure to hazardous and/or biohazardous materials: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Travel required for position: </span><span class="smallertext">No</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Anticipated travel information: </span></td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Qualifications:</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Recommended Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">- Pursuing major in: Marketing; Business; Customer Analytics; 
+Data Science; Business Analytics; Mathematics
+- Basic understanding of Online Marketing
+- Excellent PC skills required including Microsoft Excel, Word, and 
+PowerPoint
+- Highly detail-oriented individual who can manage multiple 
+projects and tasks
+- Strong analytical and problem-solving skills
+- Strong interpersonal and communication skills 
+- Self-starter, able to learn new processes, programs, and tools 
+quickly
+</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallerstrongtext">Additional Qualifications: </span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum GPA: </span><span class="smallertext">  3.00</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Minimum Work Authorization level required: </span><span class="smallertext">No Restriction</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Level(s) of Experience Sought: </span><span class="smallertext"><br />          Intermediate - Some related work or volunteer experience/second Co-op or <br />          Advanced - Previous related work experience/final Co-op</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">A transcript will be sent to the employer on your behalf if you request an interview for this job.</span></td>
+</tr>
+<tr>
+<td class="default">
+<span class="bluesmallertext">      Majors Sought: </span>
+<span class="smallertext">Bus. - Business Analytics, </span>
+<span class="smallertext">Bus. - Business Administration, </span>
+<span class="smallertext">Bus. - Marketing, </span>
+<span class="smallertext">Comp. - Data Science, </span>
+<span class="smallertext">Arts &amp; Sci. - Mathematics</span>
+</td>
+</tr>
+<tr>
+<td class="default"> </td>
+</tr>
+<tr>
+<td class="default"><span class="strongtext">Additional Application Instructions</span></td>
+</tr>
+<tr>
+<td class="default"><span class="smallertext">In addition to your application and resume, please submit a cover letter directly to john.kalinec@revzilla.com expressing why you 
+are interested in RevZilla and why you are interested in pursuing a degree in marketing (or related field).</span></td>
+</tr>
+<tr>
+<td class="default">     <span class="bluesmallertext">Pre-Employment Screening Requirements : </span><span class="smallertext">None - Background check - RevZilla will provide hired co-op with information as to how to complete the back</span></td>
+</tr>
+</tbody></table>
+<table class="datadisplaytable" summary="This table shows some information about the current student with respect to this job in the 'Request Interview' phase." cellspacing="0">
+<tbody><tr>
+<td colspan="3" class="ddlabel">
+<span class="strongtext">Last day interviews may be requested: </span>
+<span class="redtext">May 16th, 2018</span>
+</td>
+</tr>
+<tr>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobRequest?i_user_type=S&amp;i_job_num=353640&amp;i_begin_term=201815&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D15%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Request an interview for Digital Marketing Co-Op [Retention Marketing]/ Philadelphia Job';  return true" onmouseout="window.status=''; return true">Request an Interview</a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczkslib.P_StudentJobCartProcess?i_user_type=S&amp;i_job_num=353640&amp;i_begin_term=201815&amp;i_action=A&amp;i_return=%2Fpls%2Fduprod%2Fhwczksjsd.P_StudentJobSearchDisplay%3Fi_user_type%3DS%26i_curr_page%3D15%26i_total_recs%3D370%26i_recs_per_page%3D15" onmouseover="window.status='Place Digital Marketing Co-Op [Retention Marketing]/ Philadelphia in Job Shopping Cart';  return true" onmouseout="window.status=''; return true">Save for later <img src="/cmcgifs/cart.gif" class="headerImg" title="" name="Shopping Cart" hspace="0" vspace="0" border="0" /></a>
+</td>
+<td class="ddlabel">
+<a href="/pls/duprod/hwczksjsd.P_StudentJobSearchDisplay?i_user_type=S&amp;i_curr_page=15&amp;i_total_recs=370&amp;i_recs_per_page=15" onmouseover="window.status='Return';  return true" onmouseout="window.status=''; return true"><img src="/cmcgifs/return.jpg" align="middle" alt="Return" class="headerImg" title="Return" name="Return Button" hspace="0" vspace="0" border="0" /><br /></a>
+</td>
+</tr>
+</tbody></table>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table class="plaintable" summary="This is table displays line separator at end of the page." width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="bgtabon" width="100%" colspan="2"><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" class="headerImg" title="Transparent Image" name="web_transparent" hspace="0" vspace="0" border="0" height="3" width="10" /></td></tr></tbody></table>
+<a href="#top" onmouseover="window.status='Skip to top of page'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip to top of page'; return true" onblur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</div>
+<div class="footerbeforediv">
+
+</div>
+<div class="footerlinksdiv">
+<span class="pagefooterlinks">
+<map name="SCDC_Services_Main_Menu_Links_F" title="SCDC Services Main Menu Links">
+<p>
+<a href="#skip_SCDC_Services_Main_Menu_Links_F" onmouseover="window.status='Skip SCDC Services Main Menu Links'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Skip SCDC Services Main Menu Links'; return true" onblur="window.status=''; return true" class="skiplinks">Skip SCDC Services Main Menu Links</a>
+</p><p>[ <a href="/pls/duprod/hwczkresm.P_ResumeSelectStud" onmouseover="window.status='Resume Development'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Resume Development'; return true" onblur="window.status=''; return true">Resume Development for Co-op</a>
+ | <a href="/pls/duprod/hwczksjsc.P_StudentJobSearchStud" onmouseover="window.status='Search for Co-op Jobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search for Co-op Jobs'; return true" onblur="window.status=''; return true">Search for Co-op Jobs</a>
+ | <a href="http://drexelscdc-csm.symplicity.com/" onmouseover="window.status='Go to DragonJobs'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Go to DragonJobs'; return true" onblur="window.status=''; return true">DragonJobs</a>
+ | <a href="/pls/duprod/hwczksrmp.P_StudentRequestMaintStud" onmouseover="window.status='Maintain your Interview Requests'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Maintain your Interview Requests'; return true" onblur="window.status=''; return true">Maintain your Co-Op Interview Requests</a>
+ | <a href="/pls/duprod/hwczkfsep.P_StudentESaPSelectStud" onmouseover="window.status='ES&amp;P Form Selection'; return true" onmouseout="window.status=''; return true" onfocus="window.status='ES&amp;P Form Selection'; return true" onblur="window.status=''; return true">ES&amp;P Form Completion</a>
+ | <a href="/pls/duprod/hwczkfsea.P_StudentESaPArchiveStud" onmouseover="window.status='Search the ES&amp;P Archives'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Search the ES&amp;P Archives'; return true" onblur="window.status=''; return true">Search the ES&amp;P Archives</a>
+ | <a href="/pls/duprod/hwczkmsph.P_PlacementHistoryDisp" onmouseover="window.status='Your Co-op Employment Records'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Your Co-op Employment Records'; return true" onblur="window.status=''; return true">Your Co-op Employment Records</a>
+ ]
+
+
+<a name="skip_SCDC_Services_Main_Menu_Links_F"></a>
+</p></map></span></div>
+<div class="footerafterdiv">
+
+</div>
+<div class="globalafterdiv">
+
+</div>
+<div class="globalfooterdiv">
+
+</div>
+<div class="pagefooterdiv">
+<span class="releasetext">Release: 018</span>
+</div>
+<div class="poweredbydiv">
+</div>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="banner_copyright"> <br /><h5>© 2018 Ellucian Company L.P. and its affiliates.<br /></h5></div>
+
+
+</body></html>
