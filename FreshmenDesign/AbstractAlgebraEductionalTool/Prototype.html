@@ -244,12 +244,13 @@
 			console.log(generators);
 			document.getElementById('edgeChecks').innerHTML = '';
 			var container = document.createElement('div');
+			
 			for(var element in elementDict){
 				var elementCheckLabel = document.createElement('label');
 				var elementCheck = document.createElement('input');
 				elementCheck.type = 'checkbox';
 				elementCheckLabel.className = 'checkbox-inline';
-				elementCheckLabel.innerHTML += element;
+				elementCheckLabel.innerHTML += '&nbsp' + '&nbsp'+ '&nbsp' + element + '&nbsp' + '&nbsp'+ '&nbsp' ;
 				elementCheck.id = 'edge-' + elementDict[element];
 				if(generators.has(element)){
 					console.log(element, 'is a generator');
@@ -563,7 +564,7 @@
   </head>
   <body>
 	<nav class="navbar navbar-expand-lg navbar-default bg-fade">
-	  <a class="navbar-brand" href="#" style="color: white;">Abstract Algebra</a>
+	  <a class="navbar-brand" href="LandingPage.html" style="color: white;">Abstract Algebra</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	  </button>
@@ -571,22 +572,22 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto" style = "li a{color: white;}">
 		  <li class="nav-item active">
-			<a class="nav-link" href="#" style = "color:white;">Educational Resources <span class="sr-only">(current)</span></a>
+			<a class="nav-link" href="educationalResources.html" style = "color:white;">Educational Resources <span class="sr-only">(current)</span></a>
 		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#" style = "color: white;">About</a>
 		</ul>
 	  </div>
 	</nav>
 
 	<div id = "wrapper">
 		<div style = "position: fixed; width: 250px; float:left;background-color: rgb(40,40,40); height:100vh; z-index: 99999999; margin-top: 55px;">
-			<h5 style = "color: white; text-align: center;" data-step="2" data-intro="In abstract algebra, a generating set of a group is a subset such that every element of the group can be expressed as the combination (under the group operation) of finitely many elements of the subset and their inverses.">Generating Elements</h5>
+			<h5 style = "color: white; text-align: center;" data-step="2" data-intro="In abstract algebra, a generating set of a group is a subset such that every element of the group can be expressed as the combination (under the group operation) of finitely many elements of the subset and their inverses.">Generating Elements
+			<a href="educationalResources.html#GeneratingElements">&#9432;</a>
+			</h5>
 			<form id = "generatingElems">
 				<div class = "generatingElements" style = "color: white; margin-left:40px;" id = "generator0">
-					<input type = "text" size = "1" placeholder = "a" id = "base0" data-step="3" data-intro="This is where you input your base number for the generating element" >
+					<input type = "text" size = "1" placeholder = "a" id = "base0" data-step="3" data-intro="This is where you input your base number for the generating element. Example: A" >
 					<h5 style = "float: left">^</h5>
-					<input type = "text" size = "1" placeholder = "5" id = "exp0" data-step="4" data-intro="This is where you input your exponent number for the generating element">
+					<input type = "text" size = "1" placeholder = "5" id = "exp0" data-step="4" data-intro="This is where you input your exponent number for the generating element. Example: 2">
 					<h5 style = "float: left">= 1&nbsp;&nbsp;</h5>
 					<button style = "background-color: red; color: white; float:left; border: none; font-size:10px; margin-top: 5px;" onclick = "removeGenerator(0)" data-step="6" data-intro="You can click here to remove a genrating element">&#10006;</button>
 				</div>
@@ -599,17 +600,23 @@
             <p>Take a tour to learn how to use the site!</p>
             <p><a class="btn btn-primary btn-lg" role="button" href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start(); introJs().setOption('overlayOpacity',0);">Start Tour »</a></p>
 			</div>
+			<div style="text-align: center; color: white">
+			<p>All elements of the group are combinations of the generating elements</p>
+			</div>
 		</div>
 		<div style="position:absolute; z-index: 0; background-color: rgb(40,40,40); height: 100vh;">
 		</div>
 		<div style = "position: relative; float:left; margin-left:260px; width:70%; margin-top: 55px; z-index:-1;">
-			<h5>Defining Equations:</h5>
+			<h5>Defining Equations:
+			<a href="educationalResources.html#DefiningEquations">&#9432;</a>
+			</h5>
 			<div id = "definingEquations" style = "white-space: nowrap;">
 				
 			</div>
+
 			<form>
 				<div class = "input-group">
-					<input type = "button" onclick = "parseEquations()" class = "btn" value = "Compute Group"data-step="9" data-intro="Click here to compute your group!" >
+					<input type = "button" onclick = "parseEquations()" class = "btn" value ="Compute Group"data-step="9" data-intro="Click here to compute your group!" >
 				</div>
 		
 				<div class = "input-group">
@@ -617,11 +624,13 @@
 						<span class = "input-group-text">Table Size</span>
 					</div>
 					<div class = "col-xs-1">
-						<input type = "text" id = "tableSize" class = "form-control" value = "10" data-step="8" data-intro="This is where you input your table size.">
+						<input type = "text" id = "tableSize" class = "form-control" value = "10" data-step="8" data-intro="This is where you input your table size. Example: 15">
 					</div>
 				</div>
 			</form>
-			
+			<h5>Cayley Visualization
+			<a href="educationalResources.html#CayleyTable">&#9432;</a>
+			</h5>
 			<div style = "background-color: rgb(245,245,245);">
 				<div id = "CayleyTable" style = "overflow: scroll; max-height: 500px;">
 				<table class="table table-sm">

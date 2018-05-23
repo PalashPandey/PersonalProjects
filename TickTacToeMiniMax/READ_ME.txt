@@ -1,0 +1,1 @@
+This is another project that I made, It is a javascript implementation of a 2 and 1 player Tick Tac toe. We used logic trees for the decision making in the 1 player version. 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://getbootstrap.com/docs/4.1/examples/navbar-static/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Educational Resources</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.min.css">
+    <!-- Custom styles for this template -->
+    <link href="./educationalResources_files/navbar-top.css" rel="stylesheet">
+	<style>
+		body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+		.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+		.fa-anchor,.fa-coffee {font-size:200px}
+	</style>
+  </head>
+
+  <body style = "background-color: rgb(200,200,200)">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="LandingPage.html">Abstract Algebra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Educational Resources<span class="sr-only">(current)</span></a>
+          </li>
+         </li>
+        </ul>
+      </div>
+    </nav>
+	<div>
+		<h1 style = "text-align: center">Abstract Algebra</h1>
+	</div>
+	<div style="background-color: rgb(230,230,230)">
+		<br>
+		<h4>Group Theory</h4>
+		<p style = "margin-left: 5%">
+		A group is a set of objects combined with an operation, usually denoted as (*) or (+).
+		<br>
+		<br>
+		Additionally, every group must satisfy four conditions:
+		<p style = "margin-left:10%">
+		1. Identity: There is an element '1' such that 1*a = a*1 = a for any element a in the group.<br>
+		2. Closure: For any elements a and b in the group, a*b must be in the group.<br>
+		3. Inverses: For any element a, there is a<sup>-1</sup> such that a*(a<sup>-1</sup>) = (a<sup>-1</sup>)*a = 1.<br>
+		4. Associativity: For any a, b, and c in the group, a*(b*c) = (a*b)*c.
+		</p>
+		<br>
+		<p style = "margin-left: 5%; white-space: pre">
+		Many of the mathematical objects we encounter every day are groups.
+		&#9;    Real numbers and integers form groups under addition.
+		&#9;    Permutations of a set of objects form a group under composition.
+		&#9;    Do the rational numbers form a group under multiplication?
+		</p>
+	</div>
+	<div style="background-color: rgb(230,230,230)" >
+		<br>
+		<h4 id="GeneratingElements">Generating Elements</h4>
+		<p style="margin-left: 5%">
+		Generating elements form the basis of the set of group elements.<br>
+		Every element in a group can be written as a combination multiplication and inversion of the generating elements.<br>
+		<br>
+		For finite groups, the generating elements have finite order.<br> 
+		I.E. for every generating element a, there is some positive integer n such that a<sup>n</sup> = 1.<br>
+		<br>
+		If a set of generating elements is used as the edge set for a Cayley graph, every node can be reached from any other node by following the graph's edges.<br>
+		</p>
+	</div>
+	<div style="background-color: rgb(230,230,230)" >
+		<br>
+		<h4 id="DefiningEquations">Defining Equations</h4>
+		<p style="margin-left: 5%">
+		Defining equations describe how different generating elements interact under the group operation.<br>
+		Defining equations are of the form a<sup>p</sup> * b<sup>q</sup> = b<sup>n</sup> * a<sup>n</sup>.<br>
+		In our traditional number systems, a*b = b*a for all numbers a and b. This property is called commutativity.<br>
+		</p>
+	</div>
+	<div style="background-color: rgb(230,230,230)" >
+		<br>
+		<h4 id="CayleyTable">Cayley Tables and Graphs</h4>
+		<p style="margin-left: 5%">
+		Cayley Tables describe how the elements of a group interact, similar to a multiplication table.<br>
+		<img src="CayleyTable.jpg">
+		If the set and operation satisfy all the requirements for a group, each row and each column will contain exactly one of each element.<br>
+		Cayley graphs are another way to visualize a group.<br>
+		<img src="CayleyGraph.png" style="background-color: white;">
+		Each node represents an element of the group, and each edge represents multiplication by a specific element.
+		</p>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./educationalResources_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./educationalResources_files/popper.min.js.download"></script>
+    <script src="./educationalResources_files/bootstrap.min.js.download"></script>
+  
+
+</body></html>

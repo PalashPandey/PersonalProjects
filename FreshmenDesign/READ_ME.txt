@@ -1,0 +1,2 @@
+This is my freshmen design pproject. My team made an eductional tool for abstract algebra, specifically Group theory and graph theory. 
+We created the grouping algorithm ourselves and we are using Vis.js for the node graphs and W3.css for front-end design. We are also using Intro.js for the walkthrough.

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="bootstrap-tour.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+	<title>Abstract Algebra</title>
+	<style>
+	body{
+		background-color: rgb(240,240,240);
+		
+	}
+	.navbar-default{
+		background-color: rgb(0,0,0);
+	}
+	.nav.navbar-nav.mr-auto li a{
+		color: white;
+	}
+	#wrapper{
+		width:100%;
+
+	}
+	.input-xs {
+		height: 22px;
+		padding: 2px 5px;
+		font-size: 12px;
+		line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+		border-radius: 3px;
+	}
+	.generatingElements input{
+		float:left;
+	}
+	.equationDivClass h5{
+		float:left;
+	}
+	.equationDivClass input{
+		width: 14px;
+		float: left;
+	}
+	span{
+		vertical-align: super;
+		font-size: 50%;
+	}
+	</style>
+	<script>
+		var equationParts = [];
+		
+		function copy(set, addSet){
+			for(var element of set){
+				addSet.add(element);
+			}
+		return addSet;
+		}
+		
+		function dictCopy(dict, dictReturn){
+			for(key in dict){
+				dictReturn[key] = dict[key];
+				}
+			return dictReturn;
+		}
+		
+		function convertExponentMult(exponentiated){ //for taking in user input
+			var terms = exponentiated.split('*');
+			var multExpr = '';
+			for(var i = 0; i < terms.length; i++){
+				if(terms[i].match('^') != null){
+					var baseExponent = terms[i].split('^');
+					multExpr += baseExponent[0].repeat(parseInt(baseExponent[1]));
+				}else{
+					multExpr += terms[i];
+				}
+			}
+			console.log(multExpr);
+			return multExpr;
+		}
+		
+		function convertMultExponent(mult){ //for display purposes
+			var connectedElements = mult.match(/(.)\1*/g); //repeated elements are placed in array
+			var exponentExpr = '';
+			for(var i = 0; i < connectedElements.length; i++){
+				if (i < connectedElements.length - 1){
+					if (connectedElements.length > 1){
+						exponentExpr += connectedElements[i].charAt(0) + '^' + connectedElements[i].length + '*';
+					}else{	
+						exponentExpr += connectedElements[i].charAt(0) + '*';
+					}
+				}else{
+					if(connectedElements.length > 1){
+						exponentExpr += connectedElements[i].charAt(0) + '^' + connectedElements[i].length;
+					}else{
+						exponentExpr += connecctedElements[i].charAt(0);
+					}
+				}
+			}
+			console.log(exponentExpr);
+			return exponentExpr;
+		}
+			
+		var elements = []
+		var elemPairs = []
+		var indexCounter = 0;
+		function writeGeneratingEquations(){
+			elements = [];
+			elemPairs = []
+			console.log(elemNumbers);
+			document.getElementById('definingEquations').innerHTML = '';
+			for(var i of elemNumbers){
+				var ident = 'base' + i;
+				var elem = document.getElementById(ident).value;
+				elem = elem.replace(/\s+/g,'');
+				console.log(elem);
+				elements.push(elem);
+			}
+			
+			console.log(elements);
+			indexCounter = 0;
+			for(var i = 0; i < elements.length; i++){
+				for(var j = i + 1; j < elements.length; j++){
+					var equationDiv = document.createElement('div');
+					elemPairs.push([elements[i],elements[j]])
+					equationDiv.id = 'equation' + indexCounter;
+					equationDiv.className = 'equationDivClass';
+					var lineOne = "<h5>" + elements[i] + "</h5><span><input type = 'text' id = 'exp1-" + indexCounter.toString() + "'></span>";
+					var lineTwo =  "<h5>" + elements[j] + "</h5><span><input type = 'text' id = 'exp2-" + indexCounter + "'></span>";
+					var lineThree = "<h5> = " + elements[j] + "</h5><span><input type = 'text' id = 'exp3-" + indexCounter + "'></span>";
+					var lineFour =  "<h5>" + elements[i] + "</h5><span><input type = 'text' id = 'exp4-" + indexCounter + "'></span>";
+					var lineBreak = "<br>";
+					var htmlString = lineOne + lineTwo + lineThree + lineFour + lineBreak;
+					equationDiv.innerHTML = htmlString;
+					document.getElementById("definingEquations").append(equationDiv);
+					indexCounter++;
+				}
+			}	
+		}
+		
+		var identity = new Set();
+		var equivalenceClasses = {};
+		function parseEquations(){ // Writes identity equivalence class
+			equivalenceClasses = {};
+			identity = new Set();
+			for(gen of elements){
+				console.log(gen, "generator added to EquivalenceClasses");
+				var ord = ordDict[gen];
+				equivalenceClasses[ord] = '1';
+				equivalenceClasses[gen] = gen;
+			}
+			for(var equat = 0; equat < indexCounter; equat++){
+					var unsimplifiedsList = new Set();
+					var a = elemPairs[equat][0];
+					var b = elemPairs[equat][1];
+					var bInverse = inverseDict[b];
+					var aInverse = inverseDict[a];
+					var n = parseInt(document.getElementById('exp1-' + equat).value);
+					var m = parseInt(document.getElementById('exp2-' + equat).value);
+					var r = parseInt(document.getElementById('exp3-' + equat).value);
+					var s = parseInt(document.getElementById('exp4-' + equat).value);
+					var aNbM = a.repeat(n) + b.repeat(m);
+					var bRaS = b.repeat(r) + a.repeat(s);
+					unsimplifiedsList.add(bInverse.repeat(r) + aNbM + aInverse.repeat(s)); //Equation solved for 1 in each possible way
+					unsimplifiedsList.add(aInverse.repeat(s) + bInverse.repeat(r) + aNbM);
+					unsimplifiedsList.add(aNbM + aInverse.repeat(s) + bInverse.repeat(r));
+					unsimplifiedsList.add(aInverse.repeat(n) + bRaS + bInverse.repeat(m));
+					unsimplifiedsList.add(bInverse.repeat(m) + aInverse.repeat(n) + bRaS);
+					unsimplifiedsList.add(bRaS + bInverse.repeat(m) + aInverse.repeat(n));
+					console.log(unsimplifiedsList);
+					for(var equivElem of unsimplifiedsList){
+						console.log(equivElem);
+						equivElem = equivElem.replace(ordDict[a],''); //Reduces equation using ord(a) and ord(b)
+						equivElem = equivElem.replace(ordDict[b],'');
+						equivElem = equivElem.replace(ordDict[a],''); 
+						equivElem = equivElem.replace(ordDict[b],'');
+						console.log(equivElem, 'Reduced Element');
+						equivalenceClasses[equivElem] = '1';
+						console.log(equivalenceClasses);
+						identity.add(equivElem);
+						console.log(identity);
+					}
+				}
+
+			for(var generator of elements){
+				for(var ident of identity){
+					rightMult = ident + generator;
+					leftMult = generator + ident;
+
+					equivalenceClasses[leftMult] = generator;
+					equivalenceClasses[rightMult] = generator;
+				}
+			}
+			console.log(equivalenceClasses);
+			constructTable();
+		}
+		
+		var elemNumber = 0;
+		var elemNumbers = new Set([0]);
+		function addGenerator(){
+			elemNumber++;
+			elemNumbers.add(elemNumber)
+			var div = document.createElement('div'); 
+			div.className = "generatingElements";
+			div.style = "color: white; margin-left:40px; float:left;";
+			div.id = 'generator' + elemNumber.toString();
+			div.innerHTML = '<input type = "text" size = "1" id = "base'+elemNumber+'">\
+					<h5 style = "float: left">^</h5>\
+					<input type = "text" size = "1" id = "exp'+elemNumber+'">\
+					<h5 style = "float: left">= 1&nbsp;&nbsp;</h5>\
+					<button style = "background-color: red; color: white; float:left; border: none; font-size:10px; margin-top: 5px;" onclick = "removeGenerator('+elemNumber+')">&#10006;</button>';
+			document.getElementById("generatingElems").append(div);
+		}
+		
+		
+		function removeGenerator(i){
+			document.getElementById('generator' + i.toString()).remove();
+			elemNumbers.delete(i);
+		}
+
+		var inverseDict = {};
+		var ordDict = {};
+		function writeInverseDict(){
+			inverseDict = {};
+			ordDict = {};
+			console.log(elemNumbers);
+			
+			for(var i of elemNumbers){
+				var base = document.getElementById("base" + i).value;
+				var exp = document.getElementById("exp" + i).value;
+				inverseDict[base] = base.repeat(parseInt(exp) - 1);
+				ordDict[base] = base.repeat(parseInt(exp));
+			}
+			console.log(inverseDict);
+			writeGeneratingEquations();
+		}
+		function constructTable(){
+			var indexElementDict = {0:'1'};
+			var elementIndexDict = {'1' : 0};
+			var currIndexValue = 1;
+			for(var elem of elements){
+				indexElementDict[currIndexValue] = elem;
+				elementIndexDict[elem] = currIndexValue;
+				currIndexValue++;
+			}
+			console.log('constructTable() called');
+			var maxSize = parseInt(document.getElementById("tableSize").value);
+			var seen = new Set(elements);
+			console.log(seen)
+			console.log(equivalenceClasses);
+			var seenTemp = new Set()
+			seenTemp = copy(seen, seenTemp);
+			console.log(seen.size);
+			var reachedMaxSize = false;
+			var newElems = true;
+			var cayleyTableDict = {};
+			while(seen.size < maxSize && newElems){
+				newElems = false;
+				var equivalenceClassesTemp = dictCopy(equivalenceClasses,{});
+				for(var leftElem of seen){
+					for(var rightElem of seen){
+						var nextElem = leftElem + rightElem;
+						var nextElemEquivalence = {};
+						nextElemEquivalence[nextElem] = nextElem;
+						oldElem = false;
+						var tablePosition = elementIndexDict[leftElem] + '-' + elementIndexDict[rightElem];
+						if(nextElem in equivalenceClasses){
+							oldElem = true;
+						}else{
+							for(gen of elements){
+								nextElem = nextElem.replace(ordDict[gen],'');
+							}
+							if(nextElem in equivalenceClasses){
+								oldElem = true;
+							}
+							var changing = true;
+							while(true){
+								var nextElemTemp = nextElem;
+								for(var equiv in equivalenceClasses){
+									nextElemTemp = nextElemTemp.replace(equiv,equivalenceClasses[equiv]);
+									nextElemTemp = nextElemTemp.replace('1','');
+								}
+								if(nextElemTemp == nextElem){
+									break;
+								}else{
+									nextElem = nextElemTemp;
+								}
+							}
+							for(var equiv of identity){
+								console.log(2);
+								var equivL = nextElem + equiv;
+								var equivR = equiv + nextElem;
+								while(true){
+									console.log(1);
+									var equivRTemp = equivR;
+									var equivLTemp = equivL;
+									for(gen of elements){
+										equivLTemp = equivLTemp.replace(ordDict[gen],'');
+										equivRTemp = equivRTemp.replace(ordDict[gen],'');
+										console.log(equivRTemp, 'ord reduce');
+									}
+									if(equivRTemp == equivR && equivLTemp == equivL){
+										break;
+									}else{
+										equivR = equivRTemp;
+										equivL = equivLTemp;
+									}
+								}
+								if(equivL in equivalenceClasses){
+									console.log(nextElem,'was in equivalenceClasses');
+									nextElem = equivalenceClasses[equivL];
+									oldElem = true;
+									break;
+								}else if(equivR in equivalenceClasses){
+									console.log(nextElem,'was in equivalenceClasses');
+									nextElem = equivalenceClasses[equivR];
+									oldElem = true;
+									break;
+								}else if(equivR == '' || equivL == ''){
+									oldElem = true;
+									break;
+								}else{
+									nextElemEquivalence[equivL] = nextElem;
+									nextElemEquivalence[equivR] = nextElem;
+								}	
+							}
+							console.log(nextElem);
+							console.log(nextElemEquivalence);
+						}
+						if(nextElem == ''){
+							cayleyTableDict[tablePosition] = '1';
+						}else{
+							cayleyTableDict[tablePosition] = nextElem;
+						}
+						if(!oldElem){
+							console.log('NEW');
+							newElems = true;
+							equivalenceClasses = Object.assign({}, equivalenceClasses, nextElemEquivalence);
+							seenTemp.add(nextElem);
+							indexElementDict[currIndexValue] = nextElem;
+							elementIndexDict[nextElem] = currIndexValue;
+							currIndexValue++;
+						}
+					}	
+				}
+				equivalenceClasses = dictCopy(equivalenceClassesTemp, equivalenceClasses);
+				seen = copy(seenTemp, seen);
+			}
+			console.log(seen)
+			cayleyMatrix(cayleyTableDict, indexElementDict);
+		}
+		
+		function zeroSquareMatrix(size){
+			var matrix = []
+			for(var i = 0; i < size; i++){
+				var row = [];
+				for(var j = 0; j < size; j++){
+					row.push('');
+				}
+				matrix.push(row);
+			}
+			return matrix;
+		}
+		
+		
+		function cayleyMatrix(positionDict, elementDict){
+			var maxSize = document.getElementById('tableSize').value;
+			if(Object.keys(elementDict).length < maxSize){
+				var table = zeroSquareMatrix(Object.keys(elementDict).length);
+				maxSize = Object.keys(elementDict).length
+			}else{
+				var table = zeroSquareMatrix(maxSize);
+			}
+			table[0][0] = '1';
+			for(var i = 1; i < maxSize; i++){
+				console.log(elementDict[maxSize - 1]);
+				table[i][0] = elementDict[i];
+				table[0][i] = elementDict[i];
+			}
+			for(var coords in positionDict){
+				var [x,y] = coords.split('-');
+				x = parseInt(x);
+				y = parseInt(y);
+				console.log(x);
+				console.log(y);
+				table[x][y] = equivalenceClasses[positionDict[coords]];
+			}
+			console.log(positionDict);
+			console.log(equivalenceClasses);
+			console.log(table);
+		}
+		
+		
+		// this is the script for user tour 
+		// Instance the tour
+		var tour = new Tour({
+		  steps: [
+		  {
+			element: "#wrapper",
+			title: "Title of my step",
+			content: "Content of my step"
+		  },
+		  {
+			element: "#generatingElems",
+			title: "Title of my step",
+			content: "Content of my step"
+		  }
+		]});
+		
+		// clear cookies (session data)
+		localStorage.clear();
+
+		// Initialize the tour
+		tour.init();
+
+		// Start the tour
+		tour.start(true);
+	</script>
+  </head>
+  <body>
+	<nav class="navbar navbar-expand-lg navbar-default bg-fade">
+	  <a class="navbar-brand" href="#" style="color: white;">Abstract Algebra</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto" style = "li a{color: white;}">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#" style = "color:white;">Educational Resources <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#" style = "color: white;">About</a>
+		</ul>
+	  </div>
+	</nav>
+	<div id = "wrapper">
+		<div style = "width: 250px; float:left;background-color: rgb(40,40,40); height:100vh;">
+			<h5 style = "color: white; text-align: center;">Generating Elements</h5>
+			<form id = "generatingElems">
+				<div class = "generatingElements" style = "color: white; margin-left:40px;" id = "generator0">
+					<input type = "text" size = "1" placeholder = "a" id = "base0">
+					<h5 style = "float: left">^</h5>
+					<input type = "text" size = "1" placeholder = "5" id = "exp0">
+					<h5 style = "float: left">= 1&nbsp;&nbsp;</h5>
+					<button style = "background-color: red; color: white; float:left; border: none; font-size:10px; margin-top: 5px;" onclick = "removeGenerator(0)">&#10006;</button>
+				</div>
+			</form>
+			<div style = "text-align: center;">
+				<button onclick = "addGenerator()"> Add Generating Element </button>
+				<button onclick = "writeInverseDict();"> Write Defining Equations</button>
+				<button onclick = "tour.restart();"> See how this tool works!</button>
+			</div>
+		</div>
+		<div style = "float:left; margin-left:10px">
+			<h5>Defining Equations:</h5>
+			<div id = "definingEquations" style = "white-space: nowrap;">
+				
+			</div>
+			<form>
+				<div class = "input-group">
+					<input type = "button" onclick = "parseEquations()" class = "btn" value = "Compute Group">
+				</div>
+		
+				<div class = "input-group">
+					<div class = "input-group-prepend">
+						<span class = "input-group-text">Table Size</span>
+					</div>
+					<div class = "col-xs-1">
+						<input type = "text" id = "tableSize" class = "form-control" value = "10">
+					</div>
+				</div>
+			</form>
+			<div style = "background-color: rgb(245,245,245); ">
+				<table class="table table-sm">
+				  <thead>
+					<tr>
+					  <th scope="col">*</th>
+					  <th scope="col">1</th>
+					  <th scope="col">a</th>
+					  <th scope="col">b</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th scope="col">1</th>
+					  <td>1</td>
+					  <td>a</td>
+					  <td>b</td>
+					</tr>
+					<tr>
+					  <th scope="">a</th>
+					  <td>a</td>
+					  <td>a^2</td>
+					  <td>ab</td>
+					</tr>
+					<tr>
+					  <th scope="row">b</th>
+					  <td >b</td>
+					  <td>ba</td>
+					  <td>b<sup>2</sup></td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="bootstrap-tour.min.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,7 @@
+Educational Goals:
+User should be able to:
+	Define a group
+	Define a subgroup
+	Recognize how the order of a group element determines its inverse element
+	Recognize the relation between the order of group elements and the size of the group
+	
